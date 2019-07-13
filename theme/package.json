@@ -10,11 +10,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --port 8001",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "type-check": "tsc",
-    "type-check:watch": "npm run type-check -- --watch",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "peerDependencies": {
@@ -40,9 +39,15 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
-    "@mdx-js/react": "^1.0.21",
+    "@mdx-js/mdx": "^1.0.27",
+    "@mdx-js/react": "^1.0.27",
+    "gatsby-image": "^2.2.6",
+    "gatsby-plugin-mdx": "^1.0.12",
+    "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-plugin-theme-ui": "^0.2.2",
     "gatsby-plugin-typescript": "^2.1.2",
+    "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-transformer-sharp": "^2.2.3",
     "theme-ui": "^0.2.2"
   },
   "keywords": [
