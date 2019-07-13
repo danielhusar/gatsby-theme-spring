@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-jam-example"],
+  plugins: ["@daniel.husar/gatsby-theme-spring"],
 }

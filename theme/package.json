@@ -1,19 +1,28 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "@daniel.husar/gatsby-theme-spring",
+  "version": "0.0.1",
+  "author": "Daniel Husar <dano.husar@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/danielhusar/gatsby-theme-spring.git"
   },
-  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
   "peerDependencies": {
     "gatsby": "^2.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "gatsby": "^2.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

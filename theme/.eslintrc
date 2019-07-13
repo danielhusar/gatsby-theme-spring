@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "xo",
+    "prettier"
+  ],
+  "rules": {
+    "no-await-in-loop": [0],
+    "capitalized-comments": [0]
+  },
+  "env": {
+    "jest": true
+  }
+}

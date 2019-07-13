@@ -12,7 +12,7 @@ exports.createPages = ({ actions, reporter }) => {
           Use this handy theme example as the basis for your own amazing theme!
         </p>
         <p>
-          For more information, see 
+          For more information, see
           <a href="https://themejam.gatsbyjs.org">themejam.gatsbyjs.org</a>.
         </p>
       `,
