@@ -16,7 +16,7 @@ const createPosts = (createPage, edges) => {
 };
 
 const createBlog = (createPage, edges) => {
-  createPaginatedPages(createPage, edges, '/blog');
+  createPaginatedPages(createPage, edges, '');
 };
 
 const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
@@ -58,7 +58,6 @@ exports.createPages = ({ actions, graphql }) =>
             excerpt(pruneLength: 250)
             fields {
               title
-              slug
               url
             }
           }
@@ -90,10 +89,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parent = getNode(node.parent);
     createNodeField({ node, name: 'id', value: node.id });
     createNodeField({ node, name: 'title', value: node.frontmatter.title });
-    createNodeField({ node, name: 'slug', value: node.frontmatter.slug });
+    createNodeField({ node, name: 'url', value: node.frontmatter.url });
     createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
     createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
-    createNodeField({ node, name: 'url', value: `/blog/${node.frontmatter.slug}/` });
-    createNodeField({ node, name: 'filename', value: node.fileAbsolutePath.split('/').reverse()[0] });
   }
 };
