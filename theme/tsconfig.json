@@ -16,7 +16,7 @@
     "strict": true,
     "target": "esnext",
     "resolveJsonModule": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "paths": {
       "@components/*": ["./src/components/*"],
     }

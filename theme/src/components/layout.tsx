@@ -25,14 +25,13 @@ const Layout = ({ children }: Props) => {
           body {
             margin: 0;
           }
+
+          p:last-child {
+            margin-bottom: 0;
+          }
         `}
       />
-      <Header>
-        <span>{data.site.siteMetadata.title}</span>
-      </Header>
-      <Main>
-        <Container>{children}</Container>
-      </Main>
+      <Main>{children}</Main>
     </StyledLayout>
   );
 };

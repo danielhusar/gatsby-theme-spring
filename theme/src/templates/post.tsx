@@ -4,11 +4,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 
 const MyH2 = props => <h2 style={{ color: 'tomato' }} {...props} />;
-const MyParagraph = props => <p style={{ fontSize: '18px', lineHeight: 1.6 }} />;
+// const MyParagraph = props => <p style={{ fontSize: '18px', lineHeight: 1.6 }} />;
 
 const components = {
   h2: MyH2,
-  p: MyParagraph,
+  // p: MyParagraph,
 };
 
 interface Props {}
