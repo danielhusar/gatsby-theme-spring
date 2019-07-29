@@ -3,17 +3,29 @@ import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Header from '@components/header';
 import Posts from '@components/posts';
-import { Spacer } from '@styles/utils';
+import { Query } from '../types/graphql-types';
 
-export default ({ data: { allMdx }, pageContext: { pagination } }: any) => {
+interface Props {
+  data: Query;
+  pageContext: {
+    pagination: {
+      page: string[];
+      nextPagePath: string | null;
+      previousPagePath: string | null;
+      pageCount: number;
+      pathPrefix: string;
+    };
+  };
+}
+
+export default ({ data: { allMdx }, pageContext: { pagination } }: Props) => {
   const { page } = pagination;
-  const posts: (edge | undefined)[] = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
+  const posts = page.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
 
   return (
     <Layout>
       <Header />
-      <Posts posts={posts} />
-      <Spacer size={3} />
+      {posts ? <Posts posts={posts} /> : null}
     </Layout>
   );
 };

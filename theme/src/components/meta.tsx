@@ -1,7 +1,12 @@
 import React from 'react';
-import { Meta as MetaStyled } from '@styles/blog';
+import { Meta as MetaStyled } from '@styles/meta';
 
-export default function Meta({ date, timeToRead }: any) {
+interface Props {
+  timeToRead: number;
+  date: Date | null;
+}
+
+export default function Meta({ date, timeToRead }: Props) {
   return (
     <MetaStyled>
       <time>{date}</time>

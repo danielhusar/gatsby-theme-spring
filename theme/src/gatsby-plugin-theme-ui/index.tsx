@@ -27,7 +27,7 @@ export default {
     Header: {
       display: 'block',
       margin: 0,
-      padding: '40px 0',
+      padding: '0 0 40px',
       textAlign: 'center',
       fontSize: [1, 2],
       img: {
@@ -37,7 +37,7 @@ export default {
     Main: {
       margin: '0 auto',
       maxWidth: 'container',
-      padding: '0 20px',
+      padding: '40px 20px',
     },
     h1: {
       color: 'text',

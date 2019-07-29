@@ -1,10 +1,19 @@
 import React from 'react';
 import PostSummary from './post-summary';
+import { MdxEdge } from '../types/graphql-types';
 
-export default function Posts({ posts }: any) {
-  return posts.map((edge: edge | undefined) => {
-    if (!edge) return;
-    const { node: post } = edge;
-    return <PostSummary key={post.id} post={post} />;
-  });
+interface Props {
+  posts: (MdxEdge | null | undefined)[];
+}
+
+export default function Posts({ posts }: Props) {
+  return (
+    <>
+      {posts.map((edge: MdxEdge | null | undefined) => {
+        if (!edge) return null;
+        const { node: post } = edge;
+        return <PostSummary key={post.id} post={post} />;
+      })}
+    </>
+  );
 }

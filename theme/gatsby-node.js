@@ -15,10 +15,6 @@ const createPosts = (createPage, edges) => {
   });
 };
 
-const createBlog = (createPage, edges) => {
-  createPaginatedPages(createPage, edges, '');
-};
-
 const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
   const pages = edges.reduce((acc, value, index) => {
     const pageIndex = Math.floor(index / PAGINATION_OFFSET);
@@ -55,9 +51,7 @@ exports.createPages = ({ actions, graphql }) =>
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
             fields {
-              title
               url
             }
           }
@@ -67,7 +61,7 @@ exports.createPages = ({ actions, graphql }) =>
   `).then(({ data, errors }) => {
     if (errors) return Promise.reject(errors);
     const { edges } = data.allMdx;
-    createBlog(actions.createPage, edges);
+    createPaginatedPages(actions.createPage, edges, '');
     createPosts(actions.createPage, edges);
   });
 
@@ -78,6 +72,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
         '@styles': path.resolve(__dirname, 'src/styles'),
+        '@types': path.resolve(__dirname, 'src/types'),
       },
     },
   });

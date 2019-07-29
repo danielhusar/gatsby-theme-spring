@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Styled } from 'theme-ui';
 import { Link } from 'gatsby';
 
-export const Article = styled.article`
+export const PostSummary = styled.article`
   margin: 40px 0;
   position: relative;
 
@@ -18,6 +18,10 @@ export const Article = styled.article`
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   a {
@@ -38,15 +42,6 @@ export const H2 = styled(Styled.h2)`
 
   a {
     color: inherit;
-  }
-`;
-
-export const Meta = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes[0]}px;
-  color: ${({ theme }) => theme.colors.light};
-
-  span {
-    padding: 0 10px;
   }
 `;
 

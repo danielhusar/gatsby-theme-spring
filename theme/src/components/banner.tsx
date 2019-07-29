@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { Spacer } from '@styles/utils';
+import { ImageSharpFluid } from '../types/graphql-types';
 
-export default function Banner({ banner, url }: any) {
+interface Props {
+  banner: ImageSharpFluid;
+  url: string;
+}
+
+export default function Banner({ banner, url }: Props) {
   if (!banner) return null;
 
   return (

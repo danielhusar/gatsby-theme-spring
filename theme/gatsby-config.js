@@ -21,5 +21,11 @@ module.exports = {
         fonts: ['Source Sans Pro'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-generate-typings',
+      options: {
+        dest: './src/types/graphql-types.tsx',
+      },
+    },
   ],
 };
