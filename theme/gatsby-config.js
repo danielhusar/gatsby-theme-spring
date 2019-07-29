@@ -6,6 +6,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-typescript',
     'gatsby-plugin-mdx',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',

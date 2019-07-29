@@ -11,7 +11,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop --port 8001",
-    "start": "npm run develop",
+    "start": "rm -rf .cache && npm run develop",
     "serve": "gatsby serve",
     "type-check": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
@@ -50,7 +50,8 @@
     "gatsby-plugin-typescript": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-sharp": "^2.2.3",
-    "theme-ui": "^0.2.2"
+    "theme-ui": "^0.2.2",
+    "ts-optchain": "^0.1.7"
   },
   "keywords": [
     "gatsby",

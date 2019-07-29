@@ -1,13 +1,23 @@
 import React from 'react';
 import { css, Global } from '@emotion/core';
-import { Layout as StyledLayout, Header, Main, Container } from 'theme-ui';
+import { Layout as StyledLayout, Main } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 
 interface Props {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const globalCss = css`
+  body {
+    margin: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export default function Layout({ children }: Props) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -20,20 +30,8 @@ const Layout = ({ children }: Props) => {
 
   return (
     <StyledLayout>
-      <Global
-        styles={css`
-          body {
-            margin: 0;
-          }
-
-          p:last-child {
-            margin-bottom: 0;
-          }
-        `}
-      />
+      <Global styles={globalCss} />
       <Main>{children}</Main>
     </StyledLayout>
   );
-};
-
-export default Layout;
+}

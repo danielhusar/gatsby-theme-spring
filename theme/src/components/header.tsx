@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header, Styled } from 'theme-ui';
+import { Header as HeaderStyled, Styled } from 'theme-ui';
 
-const Layout = () => {
+export default function Header() {
   return (
-    <Header>
+    <HeaderStyled>
       <img src="https://picsum.photos/id/1005/300/300" alt="My Name" width="150" />
       <Styled.h1>Hi there!</Styled.h1>
       <p>
@@ -15,8 +15,6 @@ const Layout = () => {
         Vestibulum odio diam, luctus a massa convallis, malesuada sollicitudin nunc. Sed efficitur a justo eget sagittis. Aliquam purus lorem, tempus
         eget ex vel, sollicitudin egestas risus.{' '}
       </p>
-    </Header>
+    </HeaderStyled>
   );
-};
-
-export default Layout;
+}

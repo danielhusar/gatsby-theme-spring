@@ -14,7 +14,6 @@ const components = {
 interface Props {}
 
 export default function Post({ data: { mdx: post } }: Props) {
-  console.log(post.mdxAST);
   return (
     <>
       <h1>{post.fields.title}</h1>

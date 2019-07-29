@@ -1,8 +1,3 @@
-/**
- * This theme uses `theme-ui` under the hood.
- * @see https://theme-ui.com/
- * @see https://theme-ui.com/gatsby-plugin/
- */
 export default {
   colors: {
     text: '#232129',
@@ -26,7 +21,7 @@ export default {
       backgroundColor: 'background',
       color: 'text',
       fontFamily: 'default',
-      fontSize: 1,
+      fontSize: [0, 1],
       lineHeight: 'text',
     },
     Header: {
@@ -34,7 +29,7 @@ export default {
       margin: 0,
       padding: '40px 0',
       textAlign: 'center',
-      fontSize: 2,
+      fontSize: [1, 2],
       img: {
         borderRadius: '50%',
       },
@@ -46,12 +41,25 @@ export default {
     },
     h1: {
       color: 'text',
-      fontSize: 5,
+      fontSize: [4, 5],
       lineHeight: 'heading',
     },
     h2: {
       color: 'text',
-      fontSize: 4,
+      fontSize: [3, 4],
+      lineHeight: 'heading',
+    },
+    h3: {
+      color: 'text',
+      fontSize: [2, 3],
+    },
+    h4: {
+      color: 'text',
+      fontSize: [1, 2],
+    },
+    h5: {
+      color: 'text',
+      fontSize: [0, 1],
     },
   },
 };
