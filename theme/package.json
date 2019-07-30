@@ -53,6 +53,7 @@
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-sharp": "^2.2.3",
     "react-helmet": "^5.2.1",
+    "react-live": "^2.1.2",
     "theme-ui": "^0.2.2",
     "ts-optchain": "^0.1.7"
   },

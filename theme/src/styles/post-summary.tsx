@@ -42,7 +42,7 @@ export const PostSummary = styled.article`
 `;
 
 export const H2 = styled(Styled.h2)`
-  margin: 0;
+  margin: 0 !important;
 
   a {
     color: inherit;

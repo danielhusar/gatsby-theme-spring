@@ -3,6 +3,8 @@ import { css, Global } from '@emotion/core';
 import { Layout as StyledLayout, Main } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import Helmet from 'react-helmet';
+import generic from '@styles/generic';
+import prism from '@styles/prism';
 
 interface Props {
   children: React.ReactNode;
@@ -12,13 +14,8 @@ interface Props {
 }
 
 const globalCss = css`
-  body {
-    margin: 0;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
+  ${generic}
+  ${prism}
 `;
 
 const query = graphql`

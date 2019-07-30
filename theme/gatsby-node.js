@@ -1,7 +1,7 @@
 const path = require('path');
 const { exec } = require('child_process');
 
-const PAGINATION_OFFSET = 1;
+const PAGINATION_OFFSET = 5;
 
 const createPosts = (createPage, edges) => {
   edges.forEach(({ node }, i) => {

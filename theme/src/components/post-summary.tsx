@@ -20,7 +20,13 @@ export default function PostSummary({ post }: Props) {
       <H2>
         <Link to={post.fields.url}>{post.fields.title}</Link>
       </H2>
-      {hero && post.fields.url && <Hero src={hero} url={post.fields.url} />}
+
+      {hero && post.fields.url && (
+        <>
+          <Spacer size={0.5} />
+          <Hero src={hero} url={post.fields.url} />
+        </>
+      )}
       {post.timeToRead != null && (
         <>
           <Spacer size={1} />
