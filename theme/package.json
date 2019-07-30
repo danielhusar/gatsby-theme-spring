@@ -46,6 +46,7 @@
     "gatsby-plugin-generate-typings": "^0.9.8-r1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-mdx": "^1.0.12",
+    "gatsby-plugin-nprogress": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-plugin-theme-ui": "^0.2.2",
     "gatsby-plugin-typescript": "^2.1.2",

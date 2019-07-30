@@ -30,5 +30,12 @@ module.exports = {
         dest: './src/types/graphql-types.tsx',
       },
     },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: 'tomato',
+        showSpinner: false,
+      },
+    },
   ],
 };

@@ -31,7 +31,7 @@ export default {
       textAlign: 'center',
       fontSize: [1, 2],
       img: {
-        borderRadius: '50%',
+        borderRadius: '5px',
       },
     },
     Main: {

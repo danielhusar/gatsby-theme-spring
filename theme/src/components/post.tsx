@@ -6,6 +6,7 @@ import { Mdx } from '../types/graphql-types';
 import Hero from './hero';
 import Meta from './meta';
 import { Spacer } from '@styles/utils';
+import { H1 } from '@styles/post';
 import MDXComponents from './mdx';
 
 interface Props {
@@ -18,7 +19,9 @@ export default function Post({ post }: Props) {
 
   return (
     <article>
-      {post && post.fields && <h1>{post.fields.title}</h1>}
+      <Spacer size={2} />
+      {post && post.fields && <H1>{post.fields.title}</H1>}
+      <Spacer size={1} />
       {banner && <Hero src={banner} />}
       {post.timeToRead != null && (
         <>
