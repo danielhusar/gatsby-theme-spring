@@ -86,7 +86,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parent = getNode(node.parent);
     createNodeField({ node, name: 'id', value: node.id });
     createNodeField({ node, name: 'title', value: node.frontmatter.title });
-    createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/` });
+    createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/`.replace(/\/\//g, '/') });
     createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
     createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
   }

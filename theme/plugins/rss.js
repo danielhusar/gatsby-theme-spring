@@ -53,7 +53,7 @@ module.exports = author => ({
           return allMdx.edges.map(edge => {
             let banner;
             try {
-              banner = site.siteMetadata.siteUrl + edge.node.frontmatter.banner.childImageSharp.sizes.src;
+              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.childImageSharp.sizes.src}`.replace(/\/\//g, '/');
             } catch (e) {}
 
             const image = banner ? `<img src="${banner}" /> ` : '';
@@ -61,8 +61,8 @@ module.exports = author => ({
               author: author,
               title: edge.node.fields.title,
               description: `${image}${edge.node.excerpt}`.trim(),
-              url: site.siteMetadata.siteUrl + edge.node.fields.url,
-              guid: site.siteMetadata.siteUrl + edge.node.fields.url,
+              url: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`.replace(/\/\//g, '/'),
+              guid: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`.replace(/\/\//g, '/'),
               pubDate: edge.node.fields.date,
               language: site.siteMetadata.language,
               custom_elements: [
