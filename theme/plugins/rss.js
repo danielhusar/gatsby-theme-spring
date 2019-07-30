@@ -25,17 +25,29 @@ module.exports = {
         }
       }
     `,
-    setup: ({ query }) => ({
-      custom_elements: [
-        {
-          image: [
-            { url: `${query.site.siteMetadata.siteUrl}${query.portrait.childImageSharp.fixed.src}`.replace('//', '/') },
-            { title: query.site.siteMetadata.title },
-            { link: query.site.siteMetadata.siteUrl },
-          ],
-        },
-      ],
-    }),
+    // setup: ({ query }) => ({
+    //   custom_namespaces: {
+    //     media: 'http://search.yahoo.com/mrss/',
+    //   },
+    //   custom_elements: [
+    //     {
+    //       title: query.site.siteMetadata.title,
+    //     },
+    //     {
+    //       description: query.site.siteMetadata.description,
+    //     },
+    //     {
+    //       link: query.site.siteMetadata.siteUrl,
+    //     },
+    //     {
+    //       image: [
+    //         { url: `${query.site.siteMetadata.siteUrl}${query.portrait.childImageSharp.fixed.src}`.replace('//', '/') },
+    //         { title: query.site.siteMetadata.title },
+    //         { link: query.site.siteMetadata.siteUrl },
+    //       ],
+    //     },
+    //   ],
+    // }),
     feeds: [
       {
         serialize: ({ query: { site, allMdx } }) => {
@@ -46,30 +58,27 @@ module.exports = {
             } catch (e) {}
 
             const image = banner ? `<img src="${banner}" /> ` : '';
-            return Object.assign(
-              {},
-              {
-                author: site.siteMetadata.author,
-                title: edge.node.fields.title,
-                description: `${image}${edge.node.excerpt}`.trim(),
-                url: site.siteMetadata.siteUrl + edge.node.fields.url,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.url,
-                pubDate: edge.node.fields.date,
-                language: site.siteMetadata.language,
-                custom_elements: [
-                  banner
-                    ? {
-                        'media:content': {
-                          _attr: {
-                            url: banner,
-                            medium: 'image',
-                          },
+            return {
+              author: site.siteMetadata.author,
+              title: edge.node.fields.title,
+              description: `${image}${edge.node.excerpt}`.trim(),
+              url: site.siteMetadata.siteUrl + edge.node.fields.url,
+              guid: site.siteMetadata.siteUrl + edge.node.fields.url,
+              pubDate: edge.node.fields.date,
+              language: site.siteMetadata.language,
+              custom_elements: [
+                banner
+                  ? {
+                      'media:content': {
+                        _attr: {
+                          url: banner,
+                          medium: 'image',
                         },
-                      }
-                    : undefined,
-                ],
-              }
-            );
+                      },
+                    }
+                  : undefined,
+              ],
+            };
           });
         },
         query: `

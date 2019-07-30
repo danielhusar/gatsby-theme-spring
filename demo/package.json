@@ -19,6 +19,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@daniel.husar/a11y-static-report": "^1.0.1",
     "prettier": "^1.18.2"
   }
 }
