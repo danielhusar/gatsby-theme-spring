@@ -1,6 +1,5 @@
 module.exports = {
   siteMetadata: {
-    author: 'Daniel Husar',
     title: 'Gatsby theme spring',
     description: 'Demo of the gatsby theme spring',
     keywords: 'gatsby, theme',
@@ -12,12 +11,13 @@ module.exports = {
       resolve: '@daniel.husar/gatsby-theme-spring',
       options: {
         paginationOffset: 5,
+        author: 'Daniel Husar',
       },
     },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/img/avatar.png',
+        logo: './src/img/author.png',
         appName: 'Gatsby theme spring',
         appDescription: 'Gatsby theme spring',
         developerName: 'Gatsby theme spring',

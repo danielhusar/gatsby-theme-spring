@@ -1,8 +1,7 @@
 const rssPlugin = require('./plugins/rss');
 
-module.exports = {
+module.exports = ({ author }) => ({
   siteMetadata: {
-    author: 'Daniel Husar',
     title: 'Gatsby Theme Jam Example Submission',
     description: 'Gatsby Theme Jam Example Description',
     keywords: 'gatsby, theme',
@@ -75,6 +74,6 @@ module.exports = {
         showSpinner: false,
       },
     },
-    rssPlugin,
+    rssPlugin(author),
   ],
-};
+});

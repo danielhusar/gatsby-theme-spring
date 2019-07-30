@@ -1,11 +1,10 @@
-module.exports = {
+module.exports = author => ({
   resolve: 'gatsby-plugin-feed',
   options: {
     query: `
       {
         site {
           siteMetadata {
-            author
             title
             description
             language
@@ -16,7 +15,7 @@ module.exports = {
             }
           }
         }
-        portrait: file(relativePath: {eq: "img/avatar.png"}) {
+        portrait: file(relativePath: {eq: "img/author.png"}) {
           childImageSharp {
             fixed(width: 150, height: 150) {
               src
@@ -59,7 +58,7 @@ module.exports = {
 
             const image = banner ? `<img src="${banner}" /> ` : '';
             return {
-              author: site.siteMetadata.author,
+              author: author,
               title: edge.node.fields.title,
               description: `${image}${edge.node.excerpt}`.trim(),
               url: site.siteMetadata.siteUrl + edge.node.fields.url,
@@ -111,4 +110,4 @@ module.exports = {
       },
     ],
   },
-};
+});
