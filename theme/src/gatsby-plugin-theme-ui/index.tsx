@@ -38,6 +38,7 @@ export default {
       margin: '0 auto',
       maxWidth: 'container',
       padding: '40px 20px',
+      position: 'relative',
     },
     h1: {
       color: 'text',

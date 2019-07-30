@@ -2,14 +2,17 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Header from '@components/header';
+import Nav from '@components/nav';
 import Posts from '@components/posts';
+import Pagination from '@components/pagination';
 import { Query } from '../types/graphql-types';
 
 interface Props {
   data: Query;
   pageContext: {
     pagination: {
-      page: string[];
+      currentPage: number;
+      pages: string[];
       nextPagePath: string | null;
       previousPagePath: string | null;
       pageCount: number;
@@ -19,13 +22,14 @@ interface Props {
 }
 
 export default ({ data: { allMdx }, pageContext: { pagination } }: Props) => {
-  const { page } = pagination;
-  const posts = page.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
+  const { pages, nextPagePath, previousPagePath, currentPage } = pagination;
+  const posts = pages.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
 
   return (
     <Layout>
-      <Header />
+      {currentPage === 1 ? <Header /> : <Nav />}
       {posts ? <Posts posts={posts} /> : null}
+      <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
     </Layout>
   );
 };

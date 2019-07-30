@@ -1,37 +1,47 @@
 import React from 'react';
+import { oc } from 'ts-optchain';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
 import { Query } from '../types/graphql-types';
-
-const MyH2 = (props: any) => <h2 style={{ color: 'tomato' }} {...props} />;
-
-const components = {
-  h2: MyH2,
-};
+import Layout from '@components/layout';
+import Post from '@components/post';
+import Nav from '@components/nav';
 
 interface Props {
   data: Query;
 }
 
-export default function Post({ data: { mdx: post } }: Props) {
+export default function PostPage({ data: { mdx: post } }: Props) {
+  if (!post || !post.fields || !post.fields.title) return null;
+  const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
+
   return (
-    <>
-      {post && post.fields && <h1>{post.fields.title}</h1>}
-      <MDXProvider components={components}>
-        <MDXRenderer>{post && post.body}</MDXRenderer>
-      </MDXProvider>
-    </>
+    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null}>
+      <Nav />
+      {post ? <Post post={post} /> : null}
+    </Layout>
   );
 }
 
 export const pageQuery = graphql`
   query($id: String!) {
     mdx(fields: { id: { eq: $id } }) {
+      id
+      timeToRead
+      body
+      excerpt
       fields {
         title
+        date(formatString: "MMMM DD, YYYY")
       }
-      body
+      frontmatter {
+        banner {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
 `;

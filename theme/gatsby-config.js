@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Theme Jam Example Submission',
+    description: 'Gatsby Theme Jam Example Description',
+    keywords: 'gatsby, theme',
+    language: 'en',
   },
   plugins: [
     'gatsby-plugin-theme-ui',

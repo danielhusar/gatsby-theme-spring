@@ -1,7 +1,7 @@
 const path = require('path');
 const { exec } = require('child_process');
 
-const PAGINATION_OFFSET = 10;
+const PAGINATION_OFFSET = 1;
 
 const createPosts = (createPage, edges) => {
   edges.forEach(({ node }, i) => {
@@ -23,7 +23,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
     return acc;
   }, []);
 
-  pages.forEach((page, index) => {
+  pages.forEach((slicedPages, index) => {
     ++index;
     const previousPagePath = `${pathPrefix}/${index + 1}/`;
     const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}/`;
@@ -32,7 +32,8 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
       component: path.resolve(`src/templates/blog.tsx`),
       context: {
         pagination: {
-          page,
+          pages: slicedPages,
+          currentPage: index,
           nextPagePath: index === 1 ? null : nextPagePath,
           previousPagePath: index === pages.length ? null : previousPagePath,
           pageCount: pages.length,

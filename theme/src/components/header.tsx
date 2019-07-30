@@ -1,10 +1,25 @@
 import React from 'react';
 import { Header as HeaderStyled, Styled } from 'theme-ui';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+
+const query = graphql`
+  query {
+    portrait: file(relativePath: { eq: "img/avatar.jpg" }) {
+      childImageSharp {
+        fixed(width: 150, height: 150) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 export default function Header() {
+  const { portrait } = useStaticQuery(query);
   return (
     <HeaderStyled>
-      <img src="https://picsum.photos/id/1005/300/300" alt="My Name" width="150" />
+      <Img fixed={portrait.childImageSharp.fixed} alt="My portrait" />
       <Styled.h1>Hi there!</Styled.h1>
       <p>
         Nulla facilisi. Donec a ligula lacus. Cras in dignissim nibh, eget sodales nulla. Sed auctor sed ante et varius. Donec id nisi eget leo
