@@ -8,6 +8,9 @@ module.exports = {
     keywords: 'gatsby, theme',
     language: 'en',
     pathPrefix: '/',
+    custom_namespaces: {
+      media: 'http://search.yahoo.com/mrss/',
+    },
   },
   plugins: [
     'gatsby-plugin-theme-ui',

@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/img/avatar.jpg',
+        logo: './src/img/avatar.png',
         appName: 'Gatsby theme spring',
         appDescription: 'Gatsby theme spring',
         developerName: 'Gatsby theme spring',

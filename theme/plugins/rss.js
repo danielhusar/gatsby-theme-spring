@@ -11,10 +11,31 @@ module.exports = {
             language
             siteUrl
             site_url: siteUrl
+            custom_namespaces {
+              media
+            }
+          }
+        }
+        portrait: file(relativePath: {eq: "img/avatar.png"}) {
+          childImageSharp {
+            fixed(width: 150, height: 150) {
+              src
+            }
           }
         }
       }
     `,
+    setup: ({ query }) => ({
+      custom_elements: [
+        {
+          image: [
+            { url: `${query.site.siteMetadata.siteUrl}${query.portrait.childImageSharp.fixed.src}`.replace('//', '/') },
+            { title: query.site.siteMetadata.title },
+            { link: query.site.siteMetadata.siteUrl },
+          ],
+        },
+      ],
+    }),
     feeds: [
       {
         serialize: ({ query: { site, allMdx } }) => {

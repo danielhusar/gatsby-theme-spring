@@ -6,7 +6,7 @@ import { H1 } from '@styles/header';
 
 const query = graphql`
   query {
-    portrait: file(relativePath: { eq: "img/avatar.jpg" }) {
+    portrait: file(relativePath: { eq: "img/avatar.png" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
