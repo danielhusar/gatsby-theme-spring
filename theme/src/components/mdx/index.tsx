@@ -21,8 +21,10 @@ import td from './td';
 import th from './th';
 import tr from './tr';
 import ul from './ul';
+import Gallery from './gallery';
 
 export default {
+  Gallery,
   a,
   blockquote,
   code,

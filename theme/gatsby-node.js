@@ -7,7 +7,7 @@ const createPosts = (createPage, edges) => {
   edges.forEach(({ node }, i) => {
     createPage({
       path: node.fields.url,
-      component: path.resolve('./src/templates/post.tsx'),
+      component: path.resolve(__dirname, './src/templates/post.tsx'),
       context: {
         id: node.id,
       },
@@ -29,7 +29,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
     const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}/`;
     createPage({
       path: index > 1 ? `${pathPrefix}/${index}/` : `${pathPrefix}/`,
-      component: path.resolve(`src/templates/blog.tsx`),
+      component: path.resolve(__dirname, 'src/templates/blog.tsx'),
       context: {
         pagination: {
           pages: slicedPages,
