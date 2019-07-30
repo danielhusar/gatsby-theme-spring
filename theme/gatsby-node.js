@@ -1,5 +1,4 @@
 const path = require('path');
-const { exec } = require('child_process');
 
 const PAGINATION_OFFSET = 5;
 
