@@ -64,4 +64,14 @@ export default css`
     padding-left: 20px !important;
     margin-left: -20px !important;
   }
+
+  article {
+    .gatsby-resp-image-link {
+      line-height: 0;
+    }
+
+    .gatsby-resp-image-background-image {
+      display: none !important;
+    }
+  }
 `;

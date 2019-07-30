@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '@components/layout';
 import { H1 } from '@styles/header';
+import { Link } from 'gatsby';
 
 export default function FourOFour() {
   return (

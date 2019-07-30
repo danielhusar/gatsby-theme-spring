@@ -86,9 +86,6 @@ export default {
       paddingLeft: '20px',
       borderLeft: '5px solid #968d8d',
     },
-    img: {
-      margin: ['1em 0', '1.5em 0'],
-    },
     table: {
       margin: ['1em 0', '1.5em 0'],
       width: '100%',
