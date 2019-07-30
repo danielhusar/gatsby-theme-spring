@@ -8,6 +8,7 @@ module.exports = ({ author }) => ({
     language: 'en',
     pathPrefix: '/',
     feed_url: '/rss.xml',
+    image_url: '',
     custom_namespaces: {
       media: 'http://search.yahoo.com/mrss/',
     },

@@ -9,6 +9,7 @@ module.exports = author => ({
             description
             language
             siteUrl
+            image_url
             site_url: siteUrl
             custom_namespaces {
               media
