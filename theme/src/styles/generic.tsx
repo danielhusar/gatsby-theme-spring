@@ -53,6 +53,14 @@ export default css`
     &:hover .header-anchor-link {
       opacity: 1;
     }
+
+    + p,
+    + ul,
+    + ol,
+    + table,
+    + blockquote {
+      margin-top: 0 !important;
+    }
   }
 
   h1[id] {

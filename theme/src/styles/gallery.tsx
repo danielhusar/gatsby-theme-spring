@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Gallery = styled.div`
-  margin: -0.7em 0;
   line-height: 0;
+  margin: 0.3em 0;
+
+  @media screen and (min-width: 40em) {
+    margin: 0.7em 0;
+  }
 
   p {
     display: flex;

@@ -1,0 +1,80 @@
+---
+url: 'installation'
+date: '2019-07-30'
+title: 'Installation'
+banner: './img/5.jpg'
+draft: false
+---
+
+### Installation
+
+Using yarn:
+
+```sh
+yarn add @daniel.husar/gatsby-theme-spring
+```
+
+Or using npm:
+
+```sh
+npm install @daniel.husar/gatsby-theme-spring
+```
+
+### Configuration
+
+Add plugin to you gatsby config:
+
+```js!gatsby-config.js
+module.exports = {
+  siteMetadata: {
+    ...
+  },
+  plugins: [
+    {
+      resolve: '@daniel.husar/gatsby-theme-spring',
+      options: {
+        paginationOffset: 5,
+        author: 'Daniel Husar',
+      },
+    },
+  ]
+}
+```
+
+Plugin accepts 2 options:
+
+ - `paginationOffset` (number) -  articles per page
+ - `author` (string) author name for rss feed
+
+I recommend populating also `siteMetadata` with those properties:
+
+```js
+title: 'Gatsby theme spring',
+description: 'Demo of the gatsby theme spring',
+keywords: 'gatsby, theme',
+language: 'en',
+siteUrl: 'https://gatsby-theme-spring.netlify.com/',
+feed_url: 'https://gatsby-theme-spring.netlify.com/rss.xml',
+image_url: 'https://gatsby-theme-spring.netlify.com/avatar.png',
+```
+
+### Setting up
+
+Now you can create mdx posts inside `src` directory.
+Every post needs to have this metadata:
+
+```yaml
+---
+url: 'installation'
+date: '2019-07-30'
+title: 'Installation'
+banner: './img/5.jpg'
+draft: false
+---
+```
+
+ - `url` - Post url
+ - `date` - Post date
+ - `title` - Post title
+ - `banner` - Post banner image. To disable image set this to null.
+ - `draft` - If post should be in draft mode.
