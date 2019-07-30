@@ -11,7 +11,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop --port 8001",
-    "start": "rm -rf .cache && npm run develop",
+    "start": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
     "type-check": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
@@ -50,6 +50,10 @@
     "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-plugin-theme-ui": "^0.2.2",
     "gatsby-plugin-typescript": "^2.1.2",
+    "gatsby-remark-autolink-headers": "^2.1.3",
+    "gatsby-remark-copy-linked-files": "^2.1.3",
+    "gatsby-remark-images": "^3.1.7",
+    "gatsby-remark-smartypants": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-sharp": "^2.2.3",
     "react-helmet": "^5.2.1",

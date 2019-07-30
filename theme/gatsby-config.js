@@ -8,9 +8,36 @@ module.exports = {
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-smartypants',
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 760,
+              sizeByPixelDensity: false,
+              linkImagesToOriginal: true,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              className: 'header-anchor-link',
+              maintainCase: false,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -37,7 +37,8 @@ export default {
     },
     Main: {
       margin: '0 auto',
-      maxWidth: 'container',
+      width: 'container',
+      maxWidth: '100%',
       padding: '40px 20px',
       position: 'relative',
     },
