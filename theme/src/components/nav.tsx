@@ -1,8 +1,7 @@
 import React from 'react';
 import { useStaticQuery } from 'gatsby';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Nav as NavStyled, NavItem, NavPortrait } from '@styles/nav';
-import Img from 'gatsby-image';
 
 const query = graphql`
   query {

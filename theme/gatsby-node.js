@@ -3,7 +3,7 @@ const path = require('path');
 const PAGINATION_OFFSET = 5;
 
 const createPosts = (createPage, edges) => {
-  edges.forEach(({ node }, i) => {
+  edges.forEach(({ node }) => {
     createPage({
       path: node.fields.url,
       component: path.resolve(__dirname, './src/templates/post.tsx'),
@@ -79,10 +79,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent);
     createNodeField({ node, name: 'id', value: node.id });
     createNodeField({ node, name: 'title', value: node.frontmatter.title });
     createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/`.replace(/\/\//g, '/') });

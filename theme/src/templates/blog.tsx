@@ -21,7 +21,7 @@ interface Props {
   };
 }
 
-export default ({ data: { allMdx }, pageContext: { pagination } }: Props) => {
+export default function Blogpage({ data: { allMdx }, pageContext: { pagination } }: Props) {
   const { pages, nextPagePath, previousPagePath, currentPage } = pagination;
   const posts = pages.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
 
@@ -32,7 +32,7 @@ export default ({ data: { allMdx }, pageContext: { pagination } }: Props) => {
       <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query {

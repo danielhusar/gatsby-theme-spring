@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { Styled } from 'theme-ui';
 
 export const LiveWrap = styled.div`
   margin: 1em 0;
