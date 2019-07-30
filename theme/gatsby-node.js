@@ -15,9 +15,9 @@ const createPosts = (createPage, edges) => {
   });
 };
 
-const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
+const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) => {
   const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET);
+    const pageIndex = Math.floor(index / paginationOffset);
     if (!acc[pageIndex]) acc[pageIndex] = [];
     acc[pageIndex].push(value.node.id);
     return acc;
@@ -39,13 +39,12 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
           pageCount: pages.length,
           pathPrefix,
         },
-        ...context,
       },
     });
   });
 };
 
-exports.createPages = ({ actions, graphql }) =>
+exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFFSET }) =>
   graphql(`
     query {
       allMdx(sort: { order: DESC, fields: [frontmatter___date] }, filter: { frontmatter: { draft: { ne: true } } }) {
@@ -62,7 +61,7 @@ exports.createPages = ({ actions, graphql }) =>
   `).then(({ data, errors }) => {
     if (errors) return Promise.reject(errors);
     const { edges } = data.allMdx;
-    createPaginatedPages(actions.createPage, edges, '');
+    createPaginatedPages(actions.createPage, edges, '', paginationOffset);
     createPosts(actions.createPage, edges);
   });
 
@@ -87,7 +86,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parent = getNode(node.parent);
     createNodeField({ node, name: 'id', value: node.id });
     createNodeField({ node, name: 'title', value: node.frontmatter.title });
-    createNodeField({ node, name: 'url', value: node.frontmatter.url });
+    createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/` });
     createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
     createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
   }

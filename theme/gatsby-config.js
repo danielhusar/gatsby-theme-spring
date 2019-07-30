@@ -1,15 +1,22 @@
+const rssPlugin = require('./plugins/rss');
+
 module.exports = {
   siteMetadata: {
+    author: 'Daniel Husar',
     title: 'Gatsby Theme Jam Example Submission',
     description: 'Gatsby Theme Jam Example Description',
     keywords: 'gatsby, theme',
     language: 'en',
+    pathPrefix: '/',
   },
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -64,5 +71,6 @@ module.exports = {
         showSpinner: false,
       },
     },
+    rssPlugin,
   ],
 };

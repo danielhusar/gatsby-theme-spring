@@ -12,8 +12,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "gatsby": "^2.13.1",
     "@daniel.husar/gatsby-theme-spring": "*",
+    "gatsby": "^2.13.1",
+    "gatsby-plugin-favicon": "^3.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
