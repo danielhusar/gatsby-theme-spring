@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "develop": "gatsby develop --port 8002",
+    "start": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
+    "type-check": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
