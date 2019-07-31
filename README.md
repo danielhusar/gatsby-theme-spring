@@ -58,6 +58,8 @@ image_url: 'https://gatsby-theme-spring.netlify.com/avatar.png',
 
 ### Setting up
 
+Copy your picture into `scr/img/author.png`.
+
 Now you can create mdx posts inside `src` directory.
 Every post needs to have this metadata:
 
@@ -76,8 +78,6 @@ draft: false
  - `title` - Post title
  - `banner` - Post banner image. To disable image set this to null.
  - `draft` - If post should be in draft mode.
-
-Copy your picture into `scr/img/author.png`.
 
 ### Features
 

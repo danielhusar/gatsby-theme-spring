@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 'stable'
+notifications:
+  email: false
+cache: yarn
+jobs:
+  include:
+    - stage: "Lint"
+      name: "Lint"
+      script: cd theme && yarn lint && yarn type-check
