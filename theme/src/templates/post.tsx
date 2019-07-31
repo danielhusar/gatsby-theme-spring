@@ -14,9 +14,10 @@ interface Props {
 export default function PostPage({ data: { mdx: post } }: Props) {
   if (!post || !post.fields || !post.fields.title) return null;
   const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
+  const url = oc(post).fields.url();
 
   return (
-    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null}>
+    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url}>
       <Nav />
       {post ? <Post post={post} /> : null}
       <Footer />
@@ -33,6 +34,7 @@ export const pageQuery = graphql`
       excerpt
       fields {
         title
+        url
         date(formatString: "MMMM DD, YYYY")
       }
       frontmatter {
