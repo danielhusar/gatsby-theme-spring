@@ -5,6 +5,7 @@ import Header from '@components/header';
 import Nav from '@components/nav';
 import Posts from '@components/posts';
 import Pagination from '@components/pagination';
+import { Spacer } from '@styles/utils';
 import { Query } from '../types/graphql-types';
 
 interface Props {
@@ -27,7 +28,14 @@ export default function Blogpage({ data: { allMdx }, pageContext: { pagination }
 
   return (
     <Layout>
-      {currentPage === 1 ? <Header /> : <Nav />}
+      {currentPage === 1 ? (
+        <Header />
+      ) : (
+        <>
+          <Nav />
+          <Spacer size={1} />
+        </>
+      )}
       {posts ? <Posts posts={posts} /> : null}
       <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
     </Layout>

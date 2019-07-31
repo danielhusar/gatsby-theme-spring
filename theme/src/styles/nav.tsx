@@ -6,7 +6,7 @@ export const Nav = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 20px;
 `;
 

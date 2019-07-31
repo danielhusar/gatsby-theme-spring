@@ -19,7 +19,7 @@ export default function Post({ post }: Props) {
 
   return (
     <article>
-      <Spacer size={4} />
+      <Spacer size={5} />
       {post && post.fields && <H1>{post.fields.title}</H1>}
       {banner && (
         <>

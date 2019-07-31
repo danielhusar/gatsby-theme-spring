@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: '@daniel.husar/gatsby-theme-spring',
       options: {
-        paginationOffset: 5,
+        paginationOffset: 2,
         author: 'Daniel Husar',
       },
     },

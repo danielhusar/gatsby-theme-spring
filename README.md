@@ -1,58 +1,97 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby theme spring
 
-This repo is an example and potential starting point for theme creators.
+> Robust gatsby theme for your blog.
 
-It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+[Demo](https://gatsby-theme-spring.netlify.com/)
 
-## How to use this repo
+### Installation
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+Using yarn:
 
-1.  Fork this repo.
+```sh
+yarn add @daniel.husar/gatsby-theme-spring
+```
 
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
+Or using npm:
 
-3.  Get the theme set up locally.
-    ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
+```sh
+npm install @daniel.husar/gatsby-theme-spring
+```
 
-    # move into the directory
-    cd gatsby-theme-THEMENAME
+### Configuration
 
-    # install dependencies
-    yarn
-    ```
+Add plugin to you gatsby config:
 
-4.  Update `package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
-    ```
+```js!gatsby-config.js
+module.exports = {
+  siteMetadata: {
+    ...
+  },
+  plugins: [
+    {
+      resolve: '@daniel.husar/gatsby-theme-spring',
+      options: {
+        paginationOffset: 5,
+        author: 'Daniel Husar',
+      },
+    },
+  ]
+}
+```
 
-5.  Start the demo site.
-    ```sh
-    yarn workspace demo develop
-    ```
+Plugin accepts 2 options:
 
-    The demo will start at http://localhost:8000
+ - `paginationOffset` (number) - number of articles per page
+ - `author` (string) - author name for the rss feed
 
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
+I recommend populating also `siteMetadata` with those properties:
 
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
+```js
+title: 'Gatsby theme spring',
+description: 'Demo of the gatsby theme spring',
+keywords: 'gatsby, theme',
+language: 'en',
+siteUrl: 'https://gatsby-theme-spring.netlify.com/',
+feed_url: 'https://gatsby-theme-spring.netlify.com/rss.xml',
+image_url: 'https://gatsby-theme-spring.netlify.com/avatar.png',
+```
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
+### Setting up
 
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
+Now you can create mdx posts inside `src` directory.
+Every post needs to have this metadata:
 
-## More information
+```yaml
+---
+url: 'url-to-use'
+date: '2019-07-30'
+title: 'Title of the post'
+banner: './img/hero-image.jpg'
+draft: false
+---
+```
 
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+ - `url` - Post url
+ - `date` - Post date
+ - `title` - Post title
+ - `banner` - Post banner image. To disable image set this to null.
+ - `draft` - If post should be in draft mode.
+
+Copy your picture into `scr/img/author.png`.
+
+### Features
+
+ - Gallery support
+ - Code samples with live edit
+ - Monospaced font with programming ligatures
+ - MDX with batteries included
+ - Responsive
+ - Fully accessible
+ - Works without javascript
+ - Written in Typescript
+ - RSS feed
+ - Sitemap
+
+### License
+
+MIT
