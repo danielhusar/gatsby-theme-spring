@@ -27,6 +27,7 @@ const query = graphql`
         description
         keywords
         language
+        siteUrl
       }
     }
     portrait: file(relativePath: { eq: "img/author.png" }) {
@@ -39,10 +40,15 @@ const query = graphql`
   }
 `;
 
+const concatUrl = (base: string, path: string | null) => {
+  if (!path) return null;
+  return `${base}${path}`.replace(/\/\//g, '/');
+};
+
 export default function Layout({ children, title: customTitle, description: customDescription, image }: Props) {
   const { site, portrait } = useStaticQuery(query);
-  const { title, description, keywords, language } = site.siteMetadata;
-  const authorImage = oc(portrait).childImageSharp.fixed.src();
+  const { title, description, keywords, language, siteUrl } = site.siteMetadata;
+  const metaImage = concatUrl(siteUrl, image || oc(portrait).childImageSharp.fixed.src());
 
   return (
     <StyledLayout>
@@ -54,7 +60,7 @@ export default function Layout({ children, title: customTitle, description: cust
         <meta name="keywords" content={keywords} />
         <meta property="og:title" content={customTitle || title} />
         <meta property="og:description" content={customDescription || description} />
-        {image ? <meta property="og:image" content={image || authorImage} /> : null}
+        {metaImage ? <meta property="og:image" content={metaImage} /> : null}
       </Helmet>
       <Main>{children}</Main>
     </StyledLayout>
