@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Header from '@components/header';
+import Footer from '@components/footer';
 import Nav from '@components/nav';
 import Posts from '@components/posts';
 import Pagination from '@components/pagination';
@@ -38,6 +39,7 @@ export default function Blogpage({ data: { allMdx }, pageContext: { pagination }
       )}
       {posts ? <Posts posts={posts} /> : null}
       <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
+      <Footer />
     </Layout>
   );
 }
