@@ -7,7 +7,7 @@ export default function Pre(props: any) {
   const language = languageClass.split('-')[1];
   const liveEdit = language === '.jsx';
   return (
-    <LiveWrap>
+    <LiveWrap className="pre">
       {filename ? <FileName className="filename">{filename}</FileName> : null}
       <LiveProvider code={props.children.props.children.trim()} language={liveEdit ? 'jsx' : language} disabled={!liveEdit}>
         <LiveEditWrap withFilename={!!filename} liveEdit={liveEdit}>

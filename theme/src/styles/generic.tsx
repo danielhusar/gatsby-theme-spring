@@ -58,7 +58,8 @@ export default css`
     + ul,
     + ol,
     + table,
-    + blockquote {
+    + blockquote,
+    + .pre {
       margin-top: 0 !important;
     }
   }
