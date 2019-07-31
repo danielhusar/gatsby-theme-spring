@@ -21,8 +21,12 @@ export default function Post({ post }: Props) {
     <article>
       <Spacer size={4} />
       {post && post.fields && <H1>{post.fields.title}</H1>}
-      <Spacer size={1} />
-      {banner && <Hero src={banner} />}
+      {banner && (
+        <>
+          <Spacer size={1} />
+          <Hero src={banner} />
+        </>
+      )}
       {post.timeToRead != null && (
         <>
           <Spacer size={1} />

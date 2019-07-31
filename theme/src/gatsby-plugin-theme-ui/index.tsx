@@ -69,6 +69,12 @@ export default {
       fontSize: [0, 1],
       margin: ['1em 0', '1.5em 0'],
     },
+    a: {
+      color: 'inherit',
+      ':hover': {
+        textDecoration: 'none',
+      },
+    },
     p: {
       margin: ['1em 0', '1.5em 0'],
     },
