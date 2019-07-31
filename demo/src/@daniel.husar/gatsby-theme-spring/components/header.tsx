@@ -30,7 +30,7 @@ export default function Header() {
   const image = oc(portrait).childImageSharp.fixed();
   return (
     <MyHeaderStyled>
-      <Img fixed={image} alt="" />
+      {image ? <Img fixed={image} alt="" /> : null}
       <H1>Hi there!</H1>
       <p>My name is Daniel, and I’m a product engineer based in San Francisco.</p>
       <p>Right now I’m working on Intercom Messenger to make internet business personal. Check out my blog or follow me on social media.</p>

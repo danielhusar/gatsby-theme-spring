@@ -1,4 +1,5 @@
 import React from 'react';
+import { oc } from 'ts-optchain';
 import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 import { Nav as NavStyled, NavItem, NavPortrait } from '@styles/nav';
@@ -17,12 +18,11 @@ const query = graphql`
 
 export default function Nav() {
   const { portrait } = useStaticQuery(query);
+  const image = oc(portrait).childImageSharp.fixed();
 
   return (
     <NavStyled>
-      <NavItem to="/">
-        {portrait.childImageSharp && portrait.childImageSharp.fixed ? <NavPortrait fixed={portrait.childImageSharp.fixed} alt="My portrait" /> : null}
-      </NavItem>
+      <NavItem to="/">{image ? <NavPortrait fixed={image} alt="" /> : null}</NavItem>
       <NavItem to="/">Index</NavItem>
     </NavStyled>
   );
