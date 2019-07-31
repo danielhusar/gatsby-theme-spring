@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
   margin-top: 60px;
   padding: 30px 0 0;
   position: relative;

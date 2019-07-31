@@ -16,7 +16,8 @@
     "gatsby": "^2.13.1",
     "gatsby-plugin-favicon": "^3.1.6",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-social-icons": "^4.1.0"
   },
   "devDependencies": {
     "@daniel.husar/a11y-static-report": "^1.0.1",
