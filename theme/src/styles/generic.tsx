@@ -83,4 +83,15 @@ export default css`
       display: none !important;
     }
   }
+
+  #gatsby-noscript {
+    color: white;
+    background: #4a65ff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+  }
 `;
