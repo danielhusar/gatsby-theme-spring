@@ -42,7 +42,7 @@ const query = graphql`
 
 const concatUrl = (base: string, path: string | null) => {
   if (!path) return null;
-  return `${base}${path}`.replace(/\/\//g, '/');
+  return `${base}${path}`;
 };
 
 export default function Layout({ children, title: customTitle, description: customDescription, image }: Props) {
