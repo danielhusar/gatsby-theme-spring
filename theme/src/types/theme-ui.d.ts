@@ -57,11 +57,7 @@ declare module 'theme-ui' {
    */
   export const jsx: typeof React.createElement;
 
-  interface SxProps {
-    sx?: SystemStyleObject;
-  }
-
-  type SxComponent = React.ComponentClass<SxProps>;
+  type SxComponent = React.ComponentClass<any>;
   export const Box: SxComponent;
   export const Container: SxComponent;
   export const Flex: SxComponent;
