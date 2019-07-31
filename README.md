@@ -89,7 +89,7 @@ draft: false
  - MDX with batteries included
  - [Open graph support](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
  - Responsive
- - [Fully accessible](https://travis-ci.org/danielhusar/gatsby-theme-spring/jobs/565790587)
+ - [Accessibility report](https://travis-ci.org/danielhusar/gatsby-theme-spring/jobs/565790587)
  - Works without javascript
  - Written in Typescript
  - [RSS feed](https://gatsby-theme-spring.netlify.com//rss.xml)
