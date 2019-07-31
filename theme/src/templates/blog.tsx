@@ -28,7 +28,7 @@ export default function BlogPage({ data: { allMdx }, pageContext: { pagination }
   const posts = pages.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
 
   return (
-    <Layout>
+    <Layout url={currentPage === 1 ? '' : `${currentPage}/`}>
       {currentPage === 1 ? (
         <Header />
       ) : (
