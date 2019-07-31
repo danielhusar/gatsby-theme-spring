@@ -85,8 +85,20 @@ export default css`
       line-height: 0;
     }
 
-    .gatsby-resp-image-background-image {
-      display: none !important;
+    .gatsby-resp-image-image {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 1;
+      transition: none 0s ease 0s;
+    }
+
+    .gatsby-resp-image-link {
+      position: relative;
     }
   }
 
