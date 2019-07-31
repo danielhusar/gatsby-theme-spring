@@ -1,8 +1,10 @@
 # Gatsby theme spring [![Build Status](https://travis-ci.org/danielhusar/gatsby-theme-spring.svg?branch=master)](https://travis-ci.org/danielhusar/gatsby-theme-spring)
 
-> Robust gatsby theme for your blog.
+> Robust [gatsby](https://www.gatsbyjs.org/) theme for your blog.
 
 [Demo](https://gatsby-theme-spring.netlify.com/)
+
+![screenshot](./screenshot.png)
 
 ### Installation
 
