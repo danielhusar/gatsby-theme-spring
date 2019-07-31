@@ -11,4 +11,4 @@ jobs:
       script: cd theme && yarn lint && yarn type-check
     - stage: "Accessibility"
       name: "Accessibility"
-      script: cd demo && g && yarn build && yarn a11y-static-report --folder=public
+      script: cd demo && yarn build && yarn a11y-static-report --folder=public
