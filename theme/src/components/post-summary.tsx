@@ -29,7 +29,7 @@ export default function PostSummary({ post }: Props) {
       )}
       {post.timeToRead != null && (
         <>
-          <Spacer size={1} />
+          <Spacer size={1.5} />
           <Meta date={post.fields.date} timeToRead={post.timeToRead} />
         </>
       )}

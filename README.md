@@ -81,16 +81,18 @@ draft: false
 
 ### Features
 
- - Gallery support
- - Code samples with live edit
- - Monospaced font with programming ligatures
+
+ - [Gallery support](https://gatsby-theme-spring.netlify.com//components/#gallery)
+ - [Code samples with live edit](https://gatsby-theme-spring.netlify.com//components/#simple-javascript-code-sample)
+ - [Monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
  - MDX with batteries included
+ - [Open graph support](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
  - Responsive
- - Fully accessible
+ - [Fully accessible](https://travis-ci.org/danielhusar/gatsby-theme-spring/jobs/565790587)
  - Works without javascript
  - Written in Typescript
- - RSS feed
- - Sitemap
+ - [RSS feed](https://gatsby-theme-spring.netlify.com//rss.xml)
+ - [Sitemap](https://gatsby-theme-spring.netlify.com//sitemap.xml)
 
 ### License
 

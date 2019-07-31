@@ -23,7 +23,7 @@ export default function Post({ post }: Props) {
       {post && post.fields && <H1>{post.fields.title}</H1>}
       {banner && (
         <>
-          <Spacer size={1} />
+          <Spacer size={1.5} />
           <Hero src={banner} />
         </>
       )}
