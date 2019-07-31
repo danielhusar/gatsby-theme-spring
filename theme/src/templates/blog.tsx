@@ -23,7 +23,7 @@ interface Props {
   };
 }
 
-export default function Blogpage({ data: { allMdx }, pageContext: { pagination } }: Props) {
+export default function BlogPage({ data: { allMdx }, pageContext: { pagination } }: Props) {
   const { pages, nextPagePath, previousPagePath, currentPage } = pagination;
   const posts = pages.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
 
