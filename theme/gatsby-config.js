@@ -21,6 +21,7 @@ module.exports = ({ author }) => ({
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
