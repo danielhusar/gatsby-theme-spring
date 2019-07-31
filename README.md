@@ -1,4 +1,4 @@
-# Gatsby theme spring [![Build Status](https://travis-ci.org/danielhusar/gatsby-theme-spring.svg?branch=master)](https://travis-ci.org/danielhusar/gatsby-theme-spring)
+# Gatsby theme spring [![Build Status](https://travis-ci.org/danielhusar/gatsby-theme-spring.svg?branch=master)](https://travis-ci.org/danielhusar/gatsby-theme-spring) [![Netlify Status](https://api.netlify.com/api/v1/badges/c563a0aa-f0ee-4faa-bc67-fe27b0559024/deploy-status)](https://app.netlify.com/sites/gatsby-theme-spring/deploys) [![npm version](https://badge.fury.io/js/@daniel.husar%2Fgatsby-theme-spring.svg)](https://www.npmjs.com/package/@daniel.husar/gatsby-theme-spring)
 
 > Robust [gatsby](https://www.gatsbyjs.org/) theme for your blog.
 
