@@ -83,8 +83,7 @@ draft: false
 
 ### Features
 
-
- - [Gallery support](https://gatsby-theme-spring.netlify.com//components/#gallery)
+ - [Gallery layout](https://gatsby-theme-spring.netlify.com//components/#gallery)
  - [Code samples with live edit](https://gatsby-theme-spring.netlify.com//components/#simple-javascript-code-sample)
  - [Monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
  - MDX with batteries included
@@ -95,6 +94,8 @@ draft: false
  - Written in Typescript
  - [RSS feed](https://gatsby-theme-spring.netlify.com//rss.xml)
  - [Sitemap](https://gatsby-theme-spring.netlify.com//sitemap.xml)
+ - Pagination
+ - Drafts
 
 ### License
 
