@@ -47,8 +47,7 @@ export default function Layout({ children, title: customTitle, description: cust
   return (
     <StyledLayout>
       <Global styles={globalCss} />
-      <Helmet>
-        <html lang={language} />
+      <Helmet title={customTitle || title}>
         <title>{customTitle || title}</title>
         <meta name="description" content={customDescription || description} />
         <meta name="keywords" content={keywords} />
