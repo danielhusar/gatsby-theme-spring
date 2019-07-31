@@ -2,7 +2,7 @@ export default {
   colors: {
     text: '#232129',
     background: 'white',
-    light: '#968d8d',
+    light: '#737376',
   },
   fonts: {
     default:
