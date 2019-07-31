@@ -55,11 +55,17 @@ export default css`
     }
 
     + p,
+    + style + p,
     + ul,
+    + style + ul,
     + ol,
+    + style + ol,
     + table,
+    + style + table,
     + blockquote,
-    + .pre {
+    + style + blockquote,
+    + .pre,
+    + style + .pre {
       margin-top: 0 !important;
     }
   }

@@ -1,4 +1,4 @@
-# Gatsby theme spring
+# Gatsby theme spring [![Build Status](https://travis-ci.org/danielhusar/gatsby-theme-spring.svg?branch=master)](https://travis-ci.org/danielhusar/gatsby-theme-spring)
 
 > Robust gatsby theme for your blog.
 
