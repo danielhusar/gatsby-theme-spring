@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import { defaultMargin } from './utils';
 
 interface WrapperProps {
   width: number | null;
@@ -8,11 +9,7 @@ interface WrapperProps {
 export const Wrapper = styled.div<WrapperProps>`
   text-align: center;
   display: block;
-  margin: 1em auto;
-
-  @media screen and (min-width: 40em) {
-    margin: 1.5em auto;
-  }
+  ${defaultMargin}
 
   ${({ width }) =>
     width != null &&

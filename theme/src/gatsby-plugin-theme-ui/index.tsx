@@ -1,3 +1,6 @@
+const margin = ['1em 0', '1.5em 0'];
+const headingsMargin = ['1em 0 .3em', '1.5em 0 .3em'];
+
 export default {
   colors: {
     text: '#232129',
@@ -9,7 +12,7 @@ export default {
       'Source Sans Pro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
   fontSizes: [16, 18, 20, 22, 27, 36],
-  margins: ['1.5em', '1em'],
+  margin,
   lineHeights: {
     text: '1.45',
     heading: '1.1',
@@ -46,28 +49,33 @@ export default {
       color: 'text',
       fontSize: [4, 5],
       lineHeight: 'heading',
-      margin: ['1em 0 .3em', '1.5em 0 .3em'],
+      margin: headingsMargin,
     },
     h2: {
       color: 'text',
       fontSize: [3, 4],
       lineHeight: 'heading',
-      margin: ['1em 0 .3em', '1.5em 0 .3em'],
+      margin: headingsMargin,
     },
     h3: {
       color: 'text',
       fontSize: [2, 3],
-      margin: ['1em 0 .3em', '1.5em 0 .3em'],
+      margin: headingsMargin,
     },
     h4: {
       color: 'text',
       fontSize: [1, 2],
-      margin: ['1em 0 .3em', '1.5em 0 .3em'],
+      margin: headingsMargin,
     },
     h5: {
       color: 'text',
       fontSize: [0, 1],
-      margin: ['1em 0', '1.5em 0'],
+      margin: headingsMargin,
+    },
+    h6: {
+      color: 'text',
+      fontSize: [0, 1],
+      margin: headingsMargin,
     },
     a: {
       color: 'inherit',
@@ -76,24 +84,24 @@ export default {
       },
     },
     p: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
     },
     ol: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
     },
     ul: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
     },
     section: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
     },
     blockquote: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
       paddingLeft: '20px',
       borderLeft: '5px solid #968d8d',
     },
     table: {
-      margin: ['1em 0', '1.5em 0'],
+      margin,
       width: '100%',
       borderCollapse: 'collapse',
     },

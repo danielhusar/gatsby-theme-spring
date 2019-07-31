@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import { defaultMargin } from './utils';
 
 export const LiveWrap = styled.div`
-  margin: 1em 0;
-
-  @media screen and (min-width: 40em) {
-    margin: 1.5em 0;
-  }
+  ${defaultMargin}
 
   code {
     display: block !important;
