@@ -20,6 +20,9 @@ const query = graphql`
 `;
 
 const MyHeaderStyled = styled(HeaderStyled)`
+  max-width: 700px;
+  margin: 0 auto;
+
   .social-icon {
     margin: 0 5px;
   }
