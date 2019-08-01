@@ -10,6 +10,8 @@ export const Wrapper = styled.div<WrapperProps>`
   text-align: center;
   display: block;
   ${defaultMargin}
+  margin-left: auto !important;
+  margin-right: auto !important;
 
   ${({ width }) =>
     width != null &&
