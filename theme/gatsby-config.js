@@ -61,6 +61,7 @@ module.exports = ({ author }) => ({
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: ['Source Sans Pro'],
+        display: 'swap',
       },
     },
     // {
