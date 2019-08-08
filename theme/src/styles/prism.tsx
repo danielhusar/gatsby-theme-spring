@@ -8,6 +8,7 @@ export default css`
     src: url(${FiraCodeRegularWoff}) format('woff2'), url(${FiraCodeRegularWoff2}) format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
 
   code {
