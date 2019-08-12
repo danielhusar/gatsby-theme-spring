@@ -1,4 +1,5 @@
 const rssPlugin = require('./plugins/rss');
+const sitemapPlugin = require('./plugins/sitemap');
 
 module.exports = ({ author }) => ({
   siteMetadata: {
@@ -19,7 +20,6 @@ module.exports = ({ author }) => ({
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-react-helmet',
     {
@@ -78,5 +78,6 @@ module.exports = ({ author }) => ({
       },
     },
     rssPlugin(author),
+    sitemapPlugin(),
   ],
 });
