@@ -1,6 +1,8 @@
 module.exports = () => ({
   resolve: 'gatsby-plugin-sitemap',
-  query: `
+  options: {
+    createLinkInHead: true,
+    query: `
     {
       site {
         siteMetadata {
@@ -16,4 +18,5 @@ module.exports = () => ({
         }
       }
   }`,
+  },
 });

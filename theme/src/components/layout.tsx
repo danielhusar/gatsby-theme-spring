@@ -9,8 +9,8 @@ import prism from '@styles/prism';
 
 interface Props {
   children: React.ReactNode;
-  title?: string;
-  description?: string;
+  title?: string | null;
+  description?: string | null;
   image?: string | null;
   url?: string | null;
   noIndex?: boolean;
@@ -47,7 +47,7 @@ const imageUrl = (base: string, path: string | null) => {
   return `${base}${path}`;
 };
 
-export default function Layout({ children, title: customTitle, description: customDescription, image, url, noIndex }: Props) {
+export default function Layout({ children, title: customTitle = '', description: customDescription, image, url, noIndex }: Props) {
   const { site, portrait } = useStaticQuery(query);
   const { title, description, keywords, language, siteUrl } = site.siteMetadata;
   const metaImage = imageUrl(siteUrl, image || oc(portrait).childImageSharp.fixed.src());

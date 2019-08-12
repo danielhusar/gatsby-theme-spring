@@ -12,13 +12,14 @@ interface Props {
 }
 
 export default function PostPage({ data: { mdx: post } }: Props) {
-  if (!post || !post.fields || !post.fields.title) return null;
+  if (!post) return null;
+  const title = oc(post).fields.title();
   const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
   const url = oc(post).fields.url();
   const draft = oc(post).fields.draft();
 
   return (
-    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url} noIndex={!!draft}>
+    <Layout title={title} description={post.excerpt} image={hero ? hero.src : null} url={url} noIndex={!!draft}>
       <Nav />
       {post ? <Post post={post} /> : null}
       <Footer />
