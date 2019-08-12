@@ -24,7 +24,7 @@ npm install @daniel.husar/gatsby-theme-spring
 
 Add plugin to you gatsby config:
 
-```js!gatsby-config.js
+```js:title=gatsby-config.js
 module.exports = {
   siteMetadata: {
     ...
