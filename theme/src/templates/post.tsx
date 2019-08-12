@@ -18,7 +18,7 @@ export default function PostPage({ data: { mdx: post } }: Props) {
   const draft = oc(post).fields.draft();
 
   return (
-    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url} noIndex={draft}>
+    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url} noIndex={!!draft}>
       <Nav />
       {post ? <Post post={post} /> : null}
       <Footer />
