@@ -9,18 +9,21 @@ const createPosts = (createPage, edges) => {
       component: path.resolve(__dirname, './src/templates/post.tsx'),
       context: {
         id: node.id,
+        draft: node.fields.draft,
       },
     });
   });
 };
 
 const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / paginationOffset);
-    if (!acc[pageIndex]) acc[pageIndex] = [];
-    acc[pageIndex].push(value.node.id);
-    return acc;
-  }, []);
+  const pages = edges
+    .filter(edge => !edge.node.fields.draft)
+    .reduce((acc, value, index) => {
+      const pageIndex = Math.floor(index / paginationOffset);
+      if (!acc[pageIndex]) acc[pageIndex] = [];
+      acc[pageIndex].push(value.node.id);
+      return acc;
+    }, []);
 
   pages.forEach((slicedPages, index) => {
     ++index;
@@ -46,12 +49,13 @@ const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) =
 exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFFSET }) =>
   graphql(`
     query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, filter: { frontmatter: { draft: { ne: true } } }) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             id
             fields {
               url
+              draft
             }
           }
         }
@@ -69,10 +73,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: {
-        $components: path.resolve(__dirname, 'src/components'),
         '@components': path.resolve(__dirname, 'src/components'),
         '@styles': path.resolve(__dirname, 'src/styles'),
-        $styles: path.resolve(__dirname, 'src/styles'),
         '@types': path.resolve(__dirname, 'src/types'),
       },
     },

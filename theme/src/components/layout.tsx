@@ -13,6 +13,7 @@ interface Props {
   description?: string;
   image?: string | null;
   url?: string | null;
+  noIndex?: boolean;
 }
 
 const globalCss = css`
@@ -46,7 +47,7 @@ const imageUrl = (base: string, path: string | null) => {
   return `${base}${path}`;
 };
 
-export default function Layout({ children, title: customTitle, description: customDescription, image, url }: Props) {
+export default function Layout({ children, title: customTitle, description: customDescription, image, url, noIndex }: Props) {
   const { site, portrait } = useStaticQuery(query);
   const { title, description, keywords, language, siteUrl } = site.siteMetadata;
   const metaImage = imageUrl(siteUrl, image || oc(portrait).childImageSharp.fixed.src());
@@ -68,6 +69,7 @@ export default function Layout({ children, title: customTitle, description: cust
         <meta property="twitter:description" content={customDescription || description} />
         {metaImage ? <meta property="og:image" content={metaImage} /> : null}
         {metaImage ? <meta property="twitter:image" content={metaImage} /> : null}
+        {noIndex ? <meta name="robots" content="noindex" /> : null}
       </Helmet>
       <Main>{children}</Main>
     </StyledLayout>

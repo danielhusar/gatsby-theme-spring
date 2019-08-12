@@ -15,9 +15,10 @@ export default function PostPage({ data: { mdx: post } }: Props) {
   if (!post || !post.fields || !post.fields.title) return null;
   const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
   const url = oc(post).fields.url();
+  const draft = oc(post).fields.draft();
 
   return (
-    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url}>
+    <Layout title={post.fields.title} description={post.excerpt} image={hero ? hero.src : null} url={url} noIndex={draft}>
       <Nav />
       {post ? <Post post={post} /> : null}
       <Footer />
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
         title
         url
         date(formatString: "MMMM DD, YYYY")
+        draft
       }
       frontmatter {
         banner {
