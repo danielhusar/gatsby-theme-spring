@@ -84,10 +84,10 @@ draft: false
 ### Features
 
  - [Gallery layout](https://gatsby-theme-spring.netlify.com//components/#gallery)
- - [Code samples with live edit](https://gatsby-theme-spring.netlify.com// components#simple-javascript-code-sample)
+ - [Code samples with live edit](https://gatsby-theme-spring.netlify.com//components/#simple-javascript-code-sample)
  - [Monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
  - MDX with batteries included
- - [Open graph support](https://developers.facebook.com/tools/debug/sharing/ q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
+ - [Open graph support](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
  - Responsive
  - [Accessibility report](https://travis-ci.org/danielhusar/gatsby-theme-spring/ jobs/565790587)
  - Works without javascript
