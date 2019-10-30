@@ -24,7 +24,7 @@ npm install @daniel.husar/gatsby-theme-spring
 
 Add plugin to you gatsby config:
 
-```js!gatsby-config.js
+```js
 module.exports = {
   siteMetadata: {
     ...
@@ -43,8 +43,8 @@ module.exports = {
 
 Plugin accepts 2 options:
 
- - `paginationOffset` (number) - number of articles per page
- - `author` (string) - author name for the rss feed
+- `paginationOffset` (number) - number of articles per page
+- `author` (string) - author name for the rss feed
 
 I recommend populating also `siteMetadata` with those properties:
 
@@ -73,29 +73,30 @@ title: 'Title of the post'
 banner: './img/hero-image.jpg'
 draft: false
 ---
+
 ```
 
- - `url` - Post url
- - `date` - Post date
- - `title` - Post title
- - `banner` - Post banner image. To disable image set this to null.
- - `draft` - If post should be in draft mode.
+- `url` - Post url
+- `date` - Post date
+- `title` - Post title
+- `banner` - Post banner image. To disable image set this to null.
+- `draft` - If post should be in draft mode.
 
 ### Features
 
- - [Gallery layout](https://gatsby-theme-spring.netlify.com//components/#gallery)
- - [Code samples with live edit](https://gatsby-theme-spring.netlify.com//components/#simple-javascript-code-sample)
- - [Monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
- - MDX with batteries included
- - [Open graph support](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
- - Responsive
- - [Accessibility report](https://travis-ci.org/danielhusar/gatsby-theme-spring/jobs/565790587)
- - Works without javascript
- - Written in Typescript
- - [RSS feed](https://gatsby-theme-spring.netlify.com//rss.xml)
- - [Sitemap](https://gatsby-theme-spring.netlify.com//sitemap.xml)
- - Pagination
- - Drafts
+- [Gallery layout](https://gatsby-theme-spring.netlify.com//components/#gallery)
+- [Code samples with live edit](https://gatsby-theme-spring.netlify.com//components/#simple-javascript-code-sample)
+- [Monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
+- MDX with batteries included
+- [Open graph support](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fgatsby-theme-spring.netlify.com%2Ftypography%2F)
+- Responsive
+- [Accessibility report](https://travis-ci.org/danielhusar/gatsby-theme-spring/jobs/565790587)
+- Works without javascript
+- Written in Typescript
+- [RSS feed](https://gatsby-theme-spring.netlify.com//rss.xml)
+- [Sitemap](https://gatsby-theme-spring.netlify.com//sitemap.xml)
+- Pagination
+- Drafts
 
 ### License
 
