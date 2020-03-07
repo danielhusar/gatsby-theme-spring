@@ -8,18 +8,19 @@ import { ImageSharpFluid } from '../types/graphql-types';
 interface Props {
   src: ImageSharpFluid;
   url?: string;
+  alt?: string;
 }
 
-export default function Hero({ src, url }: Props) {
+export default function Hero({ src, url, alt }: Props) {
   if (!src) return null;
 
   return (
     <HeroStyled>
       <Spacer size={1} />
       {url ? (
-        <Link to={url}>
-          <Img sizes={src} />
-        </Link>
+        <Link to={url}>{alt ? <Img sizes={src} alt={alt} /> : <Img sizes={src} />}</Link>
+      ) : alt ? (
+        <Img sizes={src} alt={alt} />
       ) : (
         <Img sizes={src} />
       )}
