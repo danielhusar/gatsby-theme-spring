@@ -1,15 +1,15 @@
-import styled from '@components/styled';
-import { Link } from 'gatsby';
+import styled from '@components/styled'
+import { Link } from 'gatsby'
 
 export const Pagination = styled.div`
   display: block;
   margin: 0 0 50px;
   padding-top: 20px;
   border-top: 1px solid ${({ theme }) => theme.colors.light};
-`;
+`
 
 interface PaginationItemProps {
-  position: 'right' | 'left';
+  position: 'right' | 'left'
 }
 
 export const PaginationItem = styled(Link)<PaginationItemProps>`
@@ -24,4 +24,4 @@ export const PaginationItem = styled(Link)<PaginationItemProps>`
   }
 
   ${({ position }) => position === 'right' && 'float: right;'}
-`;
+`

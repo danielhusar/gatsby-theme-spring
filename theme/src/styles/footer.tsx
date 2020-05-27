@@ -1,4 +1,4 @@
-import styled from '@components/styled';
+import styled from '@components/styled'
 
 export const Footer = styled.footer`
   margin-top: 60px;
@@ -16,4 +16,4 @@ export const Footer = styled.footer`
     left: 50%;
     transform: translateX(-50%);
   }
-`;
+`

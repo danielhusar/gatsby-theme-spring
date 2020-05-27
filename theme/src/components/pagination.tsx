@@ -1,9 +1,9 @@
-import React from 'react';
-import { Pagination as PaginationStyled, PaginationItem } from '@styles/pagination';
+import React from 'react'
+import { Pagination as PaginationStyled, PaginationItem } from '@styles/pagination'
 
 interface Props {
-  nextPagePath: string | null;
-  previousPagePath: string | null;
+  nextPagePath: string | null
+  previousPagePath: string | null
 }
 
 export default function Pagination({ nextPagePath, previousPagePath }: Props) {
@@ -20,5 +20,5 @@ export default function Pagination({ nextPagePath, previousPagePath }: Props) {
         </PaginationItem>
       )}
     </PaginationStyled>
-  ) : null;
+  ) : null
 }

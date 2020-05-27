@@ -1,10 +1,10 @@
-import React from 'react';
-import { Wrapper, Caption } from '@styles/image';
+import React from 'react'
+import { Wrapper, Caption } from '@styles/image'
 
 interface Props {
-  children: React.ReactNode;
-  caption: string | null;
-  width: number | null;
+  children: React.ReactNode
+  caption: string | null
+  width: number | null
 }
 
 export default ({ width, children, caption }: Props) => (
@@ -12,4 +12,4 @@ export default ({ width, children, caption }: Props) => (
     {children}
     {caption ? <Caption>{caption}</Caption> : null}
   </Wrapper>
-);
+)

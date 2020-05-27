@@ -1,24 +1,24 @@
-import React from 'react';
-import { css, Global } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
-import { Helmet } from 'react-helmet';
-import generic from '@styles/generic';
-import prism from '@styles/prism';
-import styled from '@components/styled';
+import React from 'react'
+import { css, Global } from '@emotion/core'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import generic from '@styles/generic'
+import prism from '@styles/prism'
+import styled from '@components/styled'
 
 interface Props {
-  children: React.ReactNode;
-  title?: string | null;
-  description?: string | null;
-  image?: string | null;
-  url?: string | null;
-  noIndex?: boolean;
+  children: React.ReactNode
+  title?: string | null
+  description?: string | null
+  image?: string | null
+  url?: string | null
+  noIndex?: boolean
 }
 
 const globalCss = css`
   ${generic}
   ${prism}
-`;
+`
 
 const query = graphql`
   query SiteTitleQuery {
@@ -39,12 +39,12 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
 const imageUrl = (base: string, path: string | null) => {
-  if (!path) return null;
-  return `${base}${path}`;
-};
+  if (!path) return null
+  return `${base}${path}`
+}
 
 const Main = styled.main`
   margin: 0 auto;
@@ -52,13 +52,13 @@ const Main = styled.main`
   max-width: 100%;
   padding: 40px 20px;
   position: relative;
-`;
+`
 
 export default function Layout({ children, title: customTitle = '', description: customDescription, image, url, noIndex }: Props) {
-  const { site, portrait } = useStaticQuery(query);
-  const { title, description, keywords, language, siteUrl } = site.siteMetadata;
-  const metaImage = imageUrl(siteUrl, image || portrait?.childImageSharp.fixed.src);
-  const currentUrl = `${siteUrl}${url && '/'}${url || ''}`;
+  const { site, portrait } = useStaticQuery(query)
+  const { title, description, keywords, language, siteUrl } = site.siteMetadata
+  const metaImage = imageUrl(siteUrl, image || portrait?.childImageSharp.fixed.src)
+  const currentUrl = `${siteUrl}${url && '/'}${url || ''}`
 
   return (
     <>
@@ -80,5 +80,5 @@ export default function Layout({ children, title: customTitle = '', description:
       </Helmet>
       <Main>{children}</Main>
     </>
-  );
+  )
 }

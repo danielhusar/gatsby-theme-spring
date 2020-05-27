@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery } from 'gatsby';
-import { graphql } from 'gatsby';
-import { Nav as NavStyled, NavItem, NavPortrait } from '@styles/nav';
+import React from 'react'
+import { useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Nav as NavStyled, NavItem, NavPortrait } from '@styles/nav'
 
 const query = graphql`
   query {
@@ -18,16 +18,16 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
 export default function Nav() {
-  const { portrait, site } = useStaticQuery(query);
-  const image = portrait?.childImageSharp.fixed;
+  const { portrait, site } = useStaticQuery(query)
+  const image = portrait?.childImageSharp.fixed
 
   return (
     <NavStyled>
       <NavItem to="/">{image ? <NavPortrait fixed={image} alt={site.siteMetadata.title} /> : null}</NavItem>
       <NavItem to="/">{site.siteMetadata.title}</NavItem>
     </NavStyled>
-  );
+  )
 }

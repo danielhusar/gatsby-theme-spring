@@ -1,4 +1,4 @@
-import styled from '@components/styled';
+import styled from '@components/styled'
 
 export const Gallery = styled.div`
   line-height: 0;
@@ -44,4 +44,4 @@ export const Gallery = styled.div`
       max-width: calc(100%) !important;
     }
   }
-`;
+`

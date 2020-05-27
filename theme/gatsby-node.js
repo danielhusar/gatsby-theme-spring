@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 
-const PAGINATION_OFFSET = 5;
+const PAGINATION_OFFSET = 5
 
 const createPosts = (createPage, edges) => {
   edges.forEach(({ node }) => {
@@ -11,24 +11,24 @@ const createPosts = (createPage, edges) => {
         id: node.id,
         draft: node.fields.draft,
       },
-    });
-  });
-};
+    })
+  })
+}
 
 const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) => {
   const pages = edges
-    .filter(edge => !edge.node.fields.draft)
+    .filter((edge) => !edge.node.fields.draft)
     .reduce((acc, value, index) => {
-      const pageIndex = Math.floor(index / paginationOffset);
-      if (!acc[pageIndex]) acc[pageIndex] = [];
-      acc[pageIndex].push(value.node.id);
-      return acc;
-    }, []);
+      const pageIndex = Math.floor(index / paginationOffset)
+      if (!acc[pageIndex]) acc[pageIndex] = []
+      acc[pageIndex].push(value.node.id)
+      return acc
+    }, [])
 
   pages.forEach((slicedPages, index) => {
-    ++index;
-    const previousPagePath = `${pathPrefix}/${index + 1}/`;
-    const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}/`;
+    ++index
+    const previousPagePath = `${pathPrefix}/${index + 1}/`
+    const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}/`
     createPage({
       path: index > 1 ? `${pathPrefix}/${index}/` : `${pathPrefix}/`,
       component: path.resolve(__dirname, 'src/templates/blog.tsx'),
@@ -42,9 +42,9 @@ const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) =
           pathPrefix,
         },
       },
-    });
-  });
-};
+    })
+  })
+}
 
 exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFFSET }) =>
   graphql(`
@@ -62,11 +62,11 @@ exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFF
       }
     }
   `).then(({ data, errors }) => {
-    if (errors) return Promise.reject(errors);
-    const { edges } = data.allMdx;
-    createPaginatedPages(actions.createPage, edges, '', paginationOffset);
-    createPosts(actions.createPage, edges);
-  });
+    if (errors) return Promise.reject(errors)
+    const { edges } = data.allMdx
+    createPaginatedPages(actions.createPage, edges, '', paginationOffset)
+    createPosts(actions.createPage, edges)
+  })
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -78,16 +78,16 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@types': path.resolve(__dirname, 'src/types'),
       },
     },
-  });
-};
+  })
+}
 
 exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions;
+  const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
-    createNodeField({ node, name: 'id', value: node.id });
-    createNodeField({ node, name: 'title', value: node.frontmatter.title });
-    createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/` });
-    createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
-    createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
+    createNodeField({ node, name: 'id', value: node.id })
+    createNodeField({ node, name: 'title', value: node.frontmatter.title })
+    createNodeField({ node, name: 'url', value: `${node.frontmatter.url}/` })
+    createNodeField({ node, name: 'date', value: node.frontmatter.date || '' })
+    createNodeField({ node, name: 'draft', value: node.frontmatter.draft })
   }
-};
+}

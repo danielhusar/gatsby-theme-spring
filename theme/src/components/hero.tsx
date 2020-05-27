@@ -1,18 +1,18 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-import { Spacer } from '@styles/utils';
-import { Hero as HeroStyled } from '@styles/hero';
-import { ImageSharpFluid } from '../types/graphql-types';
+import React from 'react'
+import { Link } from 'gatsby'
+import Img from 'gatsby-image'
+import { Spacer } from '@styles/utils'
+import { Hero as HeroStyled } from '@styles/hero'
+import { ImageSharpFluid } from '../types/graphql-types'
 
 interface Props {
-  src: ImageSharpFluid;
-  url?: string;
-  alt?: string;
+  src: ImageSharpFluid
+  url?: string
+  alt?: string
 }
 
 export default function Hero({ src, url, alt }: Props) {
-  if (!src) return null;
+  if (!src) return null
 
   return (
     <HeroStyled>
@@ -25,5 +25,5 @@ export default function Hero({ src, url, alt }: Props) {
         <Img sizes={src} />
       )}
     </HeroStyled>
-  );
+  )
 }

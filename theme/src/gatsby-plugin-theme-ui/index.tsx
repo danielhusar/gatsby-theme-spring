@@ -1,5 +1,5 @@
-const margin = ['1em 0', '1.5em 0'];
-const headingsMargin = ['1em 0 .3em', '1.5em 0 .3em'];
+const margin = ['1em 0', '1.5em 0']
+const headingsMargin = ['1em 0 .3em', '1.5em 0 .3em']
 
 export default {
   colors: {
@@ -97,4 +97,4 @@ export default {
       borderTop: '1px solid #968d8d',
     },
   },
-};
+}

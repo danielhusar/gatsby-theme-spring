@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/core'
 
 export default css`
   *,
@@ -112,4 +112,4 @@ export default css`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol';
   }
-`;
+`

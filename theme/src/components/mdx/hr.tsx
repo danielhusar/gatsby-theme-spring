@@ -1,6 +1,6 @@
-import React from 'react';
-import { Styled } from 'theme-ui';
+import React from 'react'
+import { Styled } from 'theme-ui'
 
 export default function Hr(props: any) {
-  return <Styled.hr {...props} />;
+  return <Styled.hr {...props} />
 }

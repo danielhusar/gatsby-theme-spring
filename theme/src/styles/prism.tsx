@@ -1,6 +1,6 @@
-import { css } from '@emotion/core';
-import FiraCodeRegularWoff from '../fonts/FiraCode-Light.woff';
-import FiraCodeRegularWoff2 from '../fonts/FiraCode-Light.woff2';
+import { css } from '@emotion/core'
+import FiraCodeRegularWoff from '../fonts/FiraCode-Light.woff'
+import FiraCodeRegularWoff2 from '../fonts/FiraCode-Light.woff2'
 
 export default css`
   @font-face {
@@ -128,4 +128,4 @@ export default css`
   .token.inserted {
     color: green;
   }
-`;
+`

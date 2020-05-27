@@ -1,6 +1,6 @@
-import styled from '@components/styled';
-import { Styled } from 'theme-ui';
-import { Link } from 'gatsby';
+import styled from '@components/styled'
+import { Styled } from 'theme-ui'
+import { Link } from 'gatsby'
 
 export const PostSummary = styled.article`
   margin: 40px 0;
@@ -39,7 +39,7 @@ export const PostSummary = styled.article`
   img {
     border-radius: 3px;
   }
-`;
+`
 
 export const H2 = styled(Styled.h2)`
   margin: 0 !important;
@@ -47,9 +47,9 @@ export const H2 = styled(Styled.h2)`
   a {
     color: inherit;
   }
-`;
+`
 
 export const ContinueReading = styled(Link)`
   color: ${({ theme }) => theme.colors.light};
   font-size: ${({ theme }) => theme.fontSizes[0]}px;
-`;
+`

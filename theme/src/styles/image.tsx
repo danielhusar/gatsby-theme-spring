@@ -1,9 +1,9 @@
-import styled from '@components/styled';
-import { css } from '@emotion/core';
-import { defaultMargin } from './utils';
+import styled from '@components/styled'
+import { css } from '@emotion/core'
+import { defaultMargin } from './utils'
 
 interface WrapperProps {
-  width: number | null;
+  width: number | null
 }
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -26,11 +26,11 @@ export const Wrapper = styled.div<WrapperProps>`
   img {
     border-radius: 3px;
   }
-`;
+`
 
 export const Caption = styled.div`
   margin-top: 10px;
   color: ${({ theme }) => theme.colors.light};
   font-size: 14px;
   text-align: center;
-`;
+`
