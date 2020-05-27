@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 import { Styled } from 'theme-ui';
 import { Link } from 'gatsby';
 

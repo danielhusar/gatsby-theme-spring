@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 
 export const Footer = styled.footer`
   margin-top: 60px;

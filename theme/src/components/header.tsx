@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 import Img from 'gatsby-image';
 import { H1 } from '@styles/header';
 

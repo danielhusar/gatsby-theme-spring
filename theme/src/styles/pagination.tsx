@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 import { Link } from 'gatsby';
 
 export const Pagination = styled.div`

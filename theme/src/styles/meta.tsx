@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 
 export const Meta = styled.div`
   font-size: ${({ theme }) => theme.fontSizes[0]}px;

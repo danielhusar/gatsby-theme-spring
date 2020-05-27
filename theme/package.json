@@ -13,7 +13,10 @@
     "develop": "gatsby develop --port 8001",
     "start": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
-    "lint": "eslint src/**/*.tsx",
+    "prettify": "prettier . --write",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint src/**/*.tsx",
+    "lint:prettier": "yarn prettier --check '**/*.{js,json,ts,tsx,graphql,md}'",
     "type-check": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

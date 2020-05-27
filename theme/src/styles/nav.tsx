@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 

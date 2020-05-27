@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { SocialIcon } from 'react-social-icons';
 import { H1 } from '@styles/header';
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 
 const query = graphql`
   query {

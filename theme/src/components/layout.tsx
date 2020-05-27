@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import generic from '@styles/generic';
 import prism from '@styles/prism';
-import styled from '@emotion/styled';
+import styled from '@components/styled';
 
 interface Props {
   children: React.ReactNode;
