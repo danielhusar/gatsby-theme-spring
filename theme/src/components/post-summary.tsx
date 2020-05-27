@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { oc } from 'ts-optchain';
 import Hero from './hero';
 import Meta from './meta';
 import { Spacer } from '@styles/utils';
@@ -13,7 +12,7 @@ interface Props {
 
 export default function PostSummary({ post }: Props) {
   if (!post || !post.fields || !post.fields.url) return null;
-  const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
+  const hero = post?.frontmatter?.banner?.childImageSharp?.fluid;
 
   return (
     <PostSummaryStyled key={post.id}>

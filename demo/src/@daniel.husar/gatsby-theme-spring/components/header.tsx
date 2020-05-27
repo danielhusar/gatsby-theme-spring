@@ -1,5 +1,4 @@
 import React from 'react';
-import { oc } from 'ts-optchain';
 import { Header as HeaderStyled } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
@@ -30,7 +29,7 @@ const MyHeaderStyled = styled(HeaderStyled)`
 
 export default function Header() {
   const { portrait } = useStaticQuery(query);
-  const image = oc(portrait).childImageSharp.fixed();
+  const image = portrait?.childImageSharp?.fixed;
   return (
     <MyHeaderStyled>
       {image ? <Img fixed={image} alt="" /> : null}

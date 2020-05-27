@@ -1,5 +1,4 @@
 import React from 'react';
-import { oc } from 'ts-optchain';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import { Mdx } from '../types/graphql-types';
@@ -15,7 +14,7 @@ interface Props {
 
 export default function Post({ post }: Props) {
   if (!post || !post.fields || !post.fields.title) return null;
-  const banner = oc(post).frontmatter.banner.childImageSharp.fluid();
+  const banner = post.frontmatter?.banner?.childImageSharp?.fluid;
 
   return (
     <article>

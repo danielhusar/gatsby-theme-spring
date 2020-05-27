@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@daniel.husar/gatsby-theme-spring": "*",
-    "gatsby": "^2.13.1",
-    "gatsby-plugin-manifest": "^2.2.20",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "gatsby": "^2.22.11",
+    "gatsby-plugin-manifest": "^2.4.9",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-social-icons": "^4.1.0"
   },
   "devDependencies": {
     "@daniel.husar/a11y-static-report": "^1.0.1",
-    "prettier": "^1.18.2"
+    "prettier": "^2.0.5"
   }
 }

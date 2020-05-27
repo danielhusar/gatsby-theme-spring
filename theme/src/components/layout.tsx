@@ -1,9 +1,8 @@
 import React from 'react';
-import { oc } from 'ts-optchain';
 import { css, Global } from '@emotion/core';
 import { Layout as StyledLayout, Main } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import generic from '@styles/generic';
 import prism from '@styles/prism';
 
@@ -50,7 +49,7 @@ const imageUrl = (base: string, path: string | null) => {
 export default function Layout({ children, title: customTitle = '', description: customDescription, image, url, noIndex }: Props) {
   const { site, portrait } = useStaticQuery(query);
   const { title, description, keywords, language, siteUrl } = site.siteMetadata;
-  const metaImage = imageUrl(siteUrl, image || oc(portrait).childImageSharp.fixed.src());
+  const metaImage = imageUrl(siteUrl, image || portrait?.childImageSharp.fixed.src);
   const currentUrl = `${siteUrl}${url && '/'}${url || ''}`;
 
   return (
