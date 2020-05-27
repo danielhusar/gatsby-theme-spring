@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header as HeaderStyled } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { SocialIcon } from 'react-social-icons';
@@ -18,9 +17,22 @@ const query = graphql`
   }
 `;
 
-const MyHeaderStyled = styled(HeaderStyled)`
+const MyHeaderStyled = styled.header`
+  display: block;
+  margin: 0;
+  padding: 0 0 40px;
+  text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  font-size: ${({ theme }) => theme.fontSizes[1]}px;
+
+  @media (min-width: 766px) {
+    font-size: ${({ theme }) => theme.fontSizes[2]}px;
+  }
+
+  img: {
+    borderradius: '5px';
+  }
 
   .social-icon {
     margin: 0 5px;

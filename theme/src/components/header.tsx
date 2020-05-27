@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header as HeaderStyled } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
+import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import { H1 } from '@styles/header';
 
@@ -13,6 +13,24 @@ const query = graphql`
         }
       }
     }
+  }
+`;
+
+const HeaderStyled = styled.header`
+  display: block;
+  margin: 0;
+  padding: 0 0 40px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: ${({ theme }) => theme.fontSizes[0]}px;
+
+  img: {
+    borderradius: '5px';
+  }
+
+  .social-icon {
+    margin: 0 5px;
   }
 `;
 

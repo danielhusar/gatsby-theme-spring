@@ -1,10 +1,10 @@
 import React from 'react';
 import { css, Global } from '@emotion/core';
-import { Layout as StyledLayout, Main } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import generic from '@styles/generic';
 import prism from '@styles/prism';
+import styled from '@emotion/styled';
 
 interface Props {
   children: React.ReactNode;
@@ -46,6 +46,14 @@ const imageUrl = (base: string, path: string | null) => {
   return `${base}${path}`;
 };
 
+const Main = styled.main`
+  margin: 0 auto;
+  width: ${({ theme }) => theme.sizes.container}px;
+  max-width: 100%;
+  padding: 40px 20px;
+  position: relative;
+`;
+
 export default function Layout({ children, title: customTitle = '', description: customDescription, image, url, noIndex }: Props) {
   const { site, portrait } = useStaticQuery(query);
   const { title, description, keywords, language, siteUrl } = site.siteMetadata;
@@ -53,7 +61,7 @@ export default function Layout({ children, title: customTitle = '', description:
   const currentUrl = `${siteUrl}${url && '/'}${url || ''}`;
 
   return (
-    <StyledLayout>
+    <>
       <Global styles={globalCss} />
       <Helmet title={customTitle || title}>
         <html lang={language} />
@@ -71,6 +79,6 @@ export default function Layout({ children, title: customTitle = '', description:
         {noIndex ? <meta name="robots" content="noindex" /> : null}
       </Helmet>
       <Main>{children}</Main>
-    </StyledLayout>
+    </>
   );
 }
