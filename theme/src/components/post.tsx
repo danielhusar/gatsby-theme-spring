@@ -1,21 +1,20 @@
-import React from 'react';
-import { oc } from 'ts-optchain';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
-import { Mdx } from '../types/graphql-types';
-import Hero from './hero';
-import Meta from './meta';
-import { Spacer } from '@styles/utils';
-import { H1 } from '@styles/post';
-import MDXComponents from './mdx';
+import React from 'react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from '@mdx-js/react'
+import { Mdx } from '../types/graphql-types'
+import Hero from './hero'
+import Meta from './meta'
+import { Spacer } from '@styles/utils'
+import { H1 } from '@styles/post'
+import MDXComponents from './mdx'
 
 interface Props {
-  post: Mdx;
+  post: Mdx
 }
 
 export default function Post({ post }: Props) {
-  if (!post || !post.fields || !post.fields.title) return null;
-  const banner = oc(post).frontmatter.banner.childImageSharp.fluid();
+  if (!post || !post.fields || !post.fields.title) return null
+  const banner = post.frontmatter?.banner?.childImageSharp?.fluid
 
   return (
     <article>
@@ -37,5 +36,5 @@ export default function Post({ post }: Props) {
         <MDXRenderer>{post && post.body}</MDXRenderer>
       </MDXProvider>
     </article>
-  );
+  )
 }

@@ -1,11 +1,9 @@
-import React from 'react';
-import { oc } from 'ts-optchain';
-import { Header as HeaderStyled } from 'theme-ui';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import { SocialIcon } from 'react-social-icons';
-import { H1 } from '@styles/header';
-import styled from '@emotion/styled';
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+import { SocialIcon } from 'react-social-icons'
+import { H1 } from '@daniel.husar/gatsby-theme-spring/src/styles/header'
+import styled from '@daniel.husar/gatsby-theme-spring/src/components/styled'
 
 const query = graphql`
   query {
@@ -17,20 +15,33 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
-const MyHeaderStyled = styled(HeaderStyled)`
+const MyHeaderStyled = styled.header`
+  display: block;
+  margin: 0;
+  padding: 0 0 40px;
+  text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  font-size: ${({ theme }) => theme.fontSizes[1]}px;
+
+  @media (min-width: 766px) {
+    font-size: ${({ theme }) => theme.fontSizes[2]}px;
+  }
+
+  img {
+    border-radius: 5px;
+  }
 
   .social-icon {
     margin: 0 5px;
   }
-`;
+`
 
 export default function Header() {
-  const { portrait } = useStaticQuery(query);
-  const image = oc(portrait).childImageSharp.fixed();
+  const { portrait } = useStaticQuery(query)
+  const image = portrait?.childImageSharp?.fixed
   return (
     <MyHeaderStyled>
       {image ? <Img fixed={image} alt="" /> : null}
@@ -43,5 +54,5 @@ export default function Header() {
         <SocialIcon url="https://www.instagram.com/efrafa/" style={{ height: 35, width: 35 }} />
       </div>
     </MyHeaderStyled>
-  );
+  )
 }

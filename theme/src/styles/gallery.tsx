@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@components/styled'
 
 export const Gallery = styled.div`
   line-height: 0;
@@ -14,6 +14,7 @@ export const Gallery = styled.div`
     margin: 0 -0.7em !important;
   }
 
+  .gatsby-resp-image-background-image,
   img {
     margin: 0 !important;
     border-radius: 3px;
@@ -44,4 +45,4 @@ export const Gallery = styled.div`
       max-width: calc(100%) !important;
     }
   }
-`;
+`

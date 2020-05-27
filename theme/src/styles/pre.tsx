@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import { defaultMargin } from './utils';
+import styled from '@components/styled'
+import { css } from '@emotion/core'
+import { defaultMargin } from './utils'
 
 export const LiveWrap = styled.div`
   ${defaultMargin}
@@ -8,7 +8,7 @@ export const LiveWrap = styled.div`
   code {
     display: block !important;
   }
-`;
+`
 
 export const FileName = styled.div`
   font-size: 12px;
@@ -18,11 +18,11 @@ export const FileName = styled.div`
   border-bottom: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-`;
+`
 
 interface LiveEditWrapProps {
-  withFilename?: boolean;
-  liveEdit?: boolean;
+  withFilename?: boolean
+  liveEdit?: boolean
 }
 
 export const LiveEditWrap = styled.code<LiveEditWrapProps>`
@@ -46,7 +46,7 @@ export const LiveEditWrap = styled.code<LiveEditWrapProps>`
   pre:focus {
     outline-offset: 12px;
   }
-`;
+`
 
 export const LiveLabel = styled.div`
   position: absolute;
@@ -60,7 +60,7 @@ export const LiveLabel = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.light};
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
-`;
+`
 
 export const LiveErrorWrap = styled.div`
   pre {
@@ -70,7 +70,7 @@ export const LiveErrorWrap = styled.div`
     background: #a04141;
     font-size: 14px;
   }
-`;
+`
 
 export const LivePreviewWrap = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.light};
@@ -80,4 +80,4 @@ export const LivePreviewWrap = styled.div`
   border-bottom-right-radius: 3px;
   font-size: 15px;
   position: relative;
-`;
+`

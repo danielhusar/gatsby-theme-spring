@@ -1,9 +1,8 @@
-import React from 'react';
-import { oc } from 'ts-optchain';
-import { Header as HeaderStyled } from 'theme-ui';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import { H1 } from '@styles/header';
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from '@components/styled'
+import Img from 'gatsby-image'
+import { H1 } from '@styles/header'
 
 const query = graphql`
   query {
@@ -15,11 +14,29 @@ const query = graphql`
       }
     }
   }
-`;
+`
+
+const HeaderStyled = styled.header`
+  display: block;
+  margin: 0;
+  padding: 0 0 40px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: ${({ theme }) => theme.fontSizes[0]}px;
+
+  img {
+    border-radius: 5px;
+  }
+
+  .social-icon {
+    margin: 0 5px;
+  }
+`
 
 export default function Header() {
-  const { portrait } = useStaticQuery(query);
-  const image = oc(portrait).childImageSharp.fixed();
+  const { portrait } = useStaticQuery(query)
+  const image = portrait?.childImageSharp.fixed
   return (
     <HeaderStyled>
       {image ? <Img fixed={image} alt="" /> : null}
@@ -27,5 +44,5 @@ export default function Header() {
       <p>My name is Daniel, and I’m a product engineer based in San Francisco.</p>
       <p>Right now I’m working on Intercom Messenger to make internet business personal. Check out my blog or follow me on social media.</p>
     </HeaderStyled>
-  );
+  )
 }

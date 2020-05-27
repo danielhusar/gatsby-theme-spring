@@ -1,6 +1,6 @@
-import React from 'react';
-import { Styled } from 'theme-ui';
+import React from 'react'
+import { Styled } from 'theme-ui'
 
 export default function Th(props: any) {
-  return <Styled.th {...props} />;
+  return <Styled.th {...props} />
 }

@@ -1,19 +1,18 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { oc } from 'ts-optchain';
-import Hero from './hero';
-import Meta from './meta';
-import { Spacer } from '@styles/utils';
-import { PostSummary as PostSummaryStyled, H2, ContinueReading } from '@styles/post-summary';
-import { Mdx } from '../types/graphql-types';
+import React from 'react'
+import { Link } from 'gatsby'
+import Hero from './hero'
+import Meta from './meta'
+import { Spacer } from '@styles/utils'
+import { PostSummary as PostSummaryStyled, H2, ContinueReading } from '@styles/post-summary'
+import { Mdx } from '../types/graphql-types'
 
 interface Props {
-  post: Mdx;
+  post: Mdx
 }
 
 export default function PostSummary({ post }: Props) {
-  if (!post || !post.fields || !post.fields.url) return null;
-  const hero = oc(post).frontmatter.banner.childImageSharp.fluid();
+  if (!post || !post.fields || !post.fields.url) return null
+  const hero = post?.frontmatter?.banner?.childImageSharp?.fluid
 
   return (
     <PostSummaryStyled key={post.id}>
@@ -38,5 +37,5 @@ export default function PostSummary({ post }: Props) {
       <Spacer size={1} />
       <ContinueReading to={post.fields.url}>Continue Reading</ContinueReading>
     </PostSummaryStyled>
-  );
+  )
 }

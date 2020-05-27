@@ -1,4 +1,4 @@
-module.exports = author => ({
+module.exports = (author) => ({
   resolve: 'gatsby-plugin-feed',
   options: {
     query: `
@@ -51,13 +51,13 @@ module.exports = author => ({
     feeds: [
       {
         serialize: ({ query: { site, allMdx } }) => {
-          return allMdx.edges.map(edge => {
-            let banner;
+          return allMdx.edges.map((edge) => {
+            let banner
             try {
-              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.publicURL}`;
+              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.publicURL}`
             } catch (e) {}
 
-            const image = banner ? `<img src="${banner}" /> ` : '';
+            const image = banner ? `<img src="${banner}" /> ` : ''
             return {
               author: author,
               title: edge.node.fields.title,
@@ -78,8 +78,8 @@ module.exports = author => ({
                     }
                   : undefined,
               ],
-            };
-          });
+            }
+          })
         },
         query: `
           {
@@ -107,4 +107,4 @@ module.exports = author => ({
       },
     ],
   },
-});
+})

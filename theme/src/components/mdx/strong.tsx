@@ -1,6 +1,6 @@
-import React from 'react';
-import { Styled } from 'theme-ui';
+import React from 'react'
+import { Styled } from 'theme-ui'
 
 export default function Strong(props: any) {
-  return <Styled.strong {...props} />;
+  return <Styled.strong {...props} />
 }

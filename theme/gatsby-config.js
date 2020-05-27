@@ -1,5 +1,5 @@
-const rssPlugin = require('./plugins/rss');
-const sitemapPlugin = require('./plugins/sitemap');
+const rssPlugin = require('./plugins/rss')
+const sitemapPlugin = require('./plugins/sitemap')
 
 module.exports = ({ author }) => ({
   siteMetadata: {
@@ -81,4 +81,4 @@ module.exports = ({ author }) => ({
     rssPlugin(author),
     sitemapPlugin(),
   ],
-});
+})

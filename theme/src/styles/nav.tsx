@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
+import styled from '@components/styled'
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 export const Nav = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Nav = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
-`;
+`
 
 export const NavItem = styled(Link)`
   margin-right: 10px;
@@ -21,10 +21,10 @@ export const NavItem = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
-`;
+`
 
 export const NavPortrait = styled(Img)`
   overflow: hidden;
   border-radius: 5px;
   height: 50px;
-`;
+`

@@ -1,31 +1,31 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '@components/layout';
-import Header from '@components/header';
-import Footer from '@components/footer';
-import Nav from '@components/nav';
-import Posts from '@components/posts';
-import Pagination from '@components/pagination';
-import { Spacer } from '@styles/utils';
-import { Query } from '../types/graphql-types';
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '@components/layout'
+import Header from '@components/header'
+import Footer from '@components/footer'
+import Nav from '@components/nav'
+import Posts from '@components/posts'
+import Pagination from '@components/pagination'
+import { Spacer } from '@styles/utils'
+import { Query } from '../types/graphql-types'
 
 interface Props {
-  data: Query;
+  data: Query
   pageContext: {
     pagination: {
-      currentPage: number;
-      pages: string[];
-      nextPagePath: string | null;
-      previousPagePath: string | null;
-      pageCount: number;
-      pathPrefix: string;
-    };
-  };
+      currentPage: number
+      pages: string[]
+      nextPagePath: string | null
+      previousPagePath: string | null
+      pageCount: number
+      pathPrefix: string
+    }
+  }
 }
 
 export default function BlogPage({ data: { allMdx }, pageContext: { pagination } }: Props) {
-  const { pages, nextPagePath, previousPagePath, currentPage } = pagination;
-  const posts = pages.map((id: string) => allMdx && allMdx.edges.find(edge => edge.node.id === id));
+  const { pages, nextPagePath, previousPagePath, currentPage } = pagination
+  const posts = pages.map((id: string) => allMdx && allMdx.edges.find((edge) => edge.node.id === id))
 
   return (
     <Layout url={currentPage === 1 ? '' : `${currentPage}/`}>
@@ -41,7 +41,7 @@ export default function BlogPage({ data: { allMdx }, pageContext: { pagination }
       <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
       <Footer />
     </Layout>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -70,4 +70,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

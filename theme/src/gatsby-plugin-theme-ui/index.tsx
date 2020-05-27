@@ -1,5 +1,5 @@
-const margin = ['1em 0', '1.5em 0'];
-const headingsMargin = ['1em 0 .3em', '1.5em 0 .3em'];
+const margin = ['1em 0', '1.5em 0']
+const headingsMargin = ['1em 0 .3em', '1.5em 0 .3em']
 
 export default {
   colors: {
@@ -21,29 +21,12 @@ export default {
     container: 800,
   },
   styles: {
-    Layout: {
+    root: {
       backgroundColor: 'background',
       color: 'text',
       fontFamily: 'default',
       fontSize: [0, 1],
       lineHeight: 'text',
-    },
-    Header: {
-      display: 'block',
-      margin: 0,
-      padding: '0 0 40px',
-      textAlign: 'center',
-      fontSize: [1, 2],
-      img: {
-        borderRadius: '5px',
-      },
-    },
-    Main: {
-      margin: '0 auto',
-      width: 'container',
-      maxWidth: '100%',
-      padding: '40px 20px',
-      position: 'relative',
     },
     h1: {
       color: 'text',
@@ -114,4 +97,4 @@ export default {
       borderTop: '1px solid #968d8d',
     },
   },
-};
+}
