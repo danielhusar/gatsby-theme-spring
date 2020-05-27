@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import { SocialIcon } from 'react-social-icons';
-import { H1 } from '@styles/header';
-import styled from '@components/styled';
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+import { SocialIcon } from 'react-social-icons'
+import { H1 } from '@daniel.husar/gatsby-theme-spring/src/styles/header'
+import styled from '@daniel.husar/gatsby-theme-spring/src/components/styled'
 
 const query = graphql`
   query {
@@ -15,7 +15,7 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
 const MyHeaderStyled = styled.header`
   display: block;
@@ -37,11 +37,11 @@ const MyHeaderStyled = styled.header`
   .social-icon {
     margin: 0 5px;
   }
-`;
+`
 
 export default function Header() {
-  const { portrait } = useStaticQuery(query);
-  const image = portrait?.childImageSharp?.fixed;
+  const { portrait } = useStaticQuery(query)
+  const image = portrait?.childImageSharp?.fixed
   return (
     <MyHeaderStyled>
       {image ? <Img fixed={image} alt="" /> : null}
@@ -54,5 +54,5 @@ export default function Header() {
         <SocialIcon url="https://www.instagram.com/efrafa/" style={{ height: 35, width: 35 }} />
       </div>
     </MyHeaderStyled>
-  );
+  )
 }

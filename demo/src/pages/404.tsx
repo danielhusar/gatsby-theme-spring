@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Layout from '@components/layout';
-import { H1 } from '@styles/header';
+import React from 'react'
+import { Link } from 'gatsby'
+import Layout from '@daniel.husar/gatsby-theme-spring/src/components/layout'
+import { H1 } from '@daniel.husar/gatsby-theme-spring/src/styles/header'
 
 export default function FourOFour() {
   return (
@@ -11,5 +11,5 @@ export default function FourOFour() {
         Head to the <Link to="/">homepage</Link> that does exist.
       </p>
     </Layout>
-  );
+  )
 }
