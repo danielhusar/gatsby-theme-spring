@@ -14,6 +14,7 @@ export const Gallery = styled.div`
     margin: 0 -0.7em !important;
   }
 
+  .gatsby-resp-image-background-image,
   img {
     margin: 0 !important;
     border-radius: 3px;

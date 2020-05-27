@@ -25,8 +25,8 @@ const HeaderStyled = styled.header`
   margin: 0 auto;
   font-size: ${({ theme }) => theme.fontSizes[0]}px;
 
-  img: {
-    borderradius: '5px';
+  img {
+    border-radius: 5px;
   }
 
   .social-icon {

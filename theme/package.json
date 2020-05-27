@@ -16,7 +16,7 @@
     "prettify": "prettier . --write",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint src/**/*.tsx",
-    "lint:prettier": "yarn prettier --check '**/*.{js,json,ts,tsx,graphql,md}'",
+    "lint:prettier": "yarn prettier --check '**/*.{js,json,ts,tsx,graphql}'",
     "type-check": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

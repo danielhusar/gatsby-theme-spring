@@ -30,8 +30,8 @@ const MyHeaderStyled = styled.header`
     font-size: ${({ theme }) => theme.fontSizes[2]}px;
   }
 
-  img: {
-    borderradius: '5px';
+  img {
+    border-radius: 5px;
   }
 
   .social-icon {
