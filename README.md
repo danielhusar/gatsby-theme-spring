@@ -35,6 +35,7 @@ module.exports = {
       options: {
         paginationOffset: 5,
         author: 'Daniel Husar',
+        blogPath: '',
       },
     },
   ]
@@ -45,6 +46,7 @@ Plugin accepts 2 options:
 
 - `paginationOffset` (number) - number of articles per page
 - `author` (string) - author name for the rss feed
+- `blogPath` (string) - prefix path for blog posts and pagination (First page in the pagination will always be '/')
 
 I recommend populating also `siteMetadata` with those properties:
 

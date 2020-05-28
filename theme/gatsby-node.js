@@ -1,5 +1,6 @@
 const path = require('path')
 
+const BLOG_PATH = '/'
 const PAGINATION_OFFSET = 5
 
 const createPosts = (createPage, edges) => {
@@ -27,10 +28,10 @@ const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) =
 
   pages.forEach((slicedPages, index) => {
     ++index
-    const previousPagePath = `${pathPrefix}/${index + 1}/`
-    const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}/`
+    const previousPagePath = `${pathPrefix}${index + 1}/`
+    const nextPagePath = index === 2 ? '/' : `${pathPrefix}${index - 1}/`
     createPage({
-      path: index > 1 ? `${pathPrefix}/${index}/` : `${pathPrefix}/`,
+      path: index > 1 ? `${pathPrefix}${index}/` : '/',
       component: path.resolve(__dirname, 'src/templates/blog.tsx'),
       context: {
         pagination: {
@@ -46,7 +47,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, paginationOffset) =
   })
 }
 
-exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFFSET }) =>
+exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFFSET, blogPath = BLOG_PATH }) =>
   graphql(`
     query {
       allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -64,8 +65,9 @@ exports.createPages = ({ actions, graphql }, { paginationOffset = PAGINATION_OFF
   `).then(({ data, errors }) => {
     if (errors) return Promise.reject(errors)
     const { edges } = data.allMdx
-    createPaginatedPages(actions.createPage, edges, '', paginationOffset)
-    createPosts(actions.createPage, edges)
+    if (!blogPath.endsWith('/')) blogPath = `${blogPath}/`
+    createPaginatedPages(actions.createPage, edges, blogPath, paginationOffset)
+    createPosts(actions.createPage, edges, blogPath)
   })
 
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -81,12 +83,14 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions }, { blogPath = BLOG_PATH }) => {
   const { createNodeField } = actions
+  if (!blogPath.endsWith('/')) blogPath = `${blogPath}/`
+
   if (node.internal.type === `Mdx`) {
     createNodeField({ node, name: 'id', value: node.id })
     createNodeField({ node, name: 'title', value: node.frontmatter.title })
-    createNodeField({ node, name: 'url', value: `/${node.frontmatter.url}/` })
+    createNodeField({ node, name: 'url', value: `${blogPath}${node.frontmatter.url}/` })
     createNodeField({ node, name: 'date', value: node.frontmatter.date || '' })
     createNodeField({ node, name: 'draft', value: node.frontmatter.draft })
   }
