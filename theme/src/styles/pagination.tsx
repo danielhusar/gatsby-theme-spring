@@ -5,7 +5,7 @@ export const Pagination = styled.div`
   display: block;
   margin: 0 0 50px;
   padding-top: 20px;
-  border-top: 1px solid ${({ theme }) => theme.colors.light};
+  border-top: 1px solid ${({ theme }) => theme.colors.superlight};
 `
 
 interface PaginationItemProps {

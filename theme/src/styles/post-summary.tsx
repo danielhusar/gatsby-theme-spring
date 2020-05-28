@@ -11,17 +11,13 @@ export const PostSummary = styled.article`
 
     &:before {
       content: '';
-      border-top: 1px solid ${({ theme }) => theme.colors.light};
+      border-top: 1px solid ${({ theme }) => theme.colors.superlight};
       width: 100px;
       position: absolute;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
     }
-  }
-
-  &:first-of-type {
-    margin-top: 0;
   }
 
   &:last-child {

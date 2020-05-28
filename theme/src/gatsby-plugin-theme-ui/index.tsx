@@ -6,6 +6,7 @@ export default {
     text: '#232129',
     background: 'white',
     light: '#737376',
+    superlight: '#cfcfd9',
   },
   fonts: {
     default:

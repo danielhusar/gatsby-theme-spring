@@ -9,7 +9,7 @@ export const Footer = styled.footer`
 
   &:before {
     content: '';
-    border-top: 1px solid ${({ theme }) => theme.colors.light};
+    border-top: 1px solid ${({ theme }) => theme.colors.superlight};
     width: 100px;
     position: absolute;
     top: 0;
