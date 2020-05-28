@@ -16,7 +16,7 @@ export default {
   margin,
   lineHeights: {
     text: '1.45',
-    heading: '1.1',
+    heading: '1.3',
   },
   sizes: {
     container: 800,
@@ -44,21 +44,25 @@ export default {
     h3: {
       color: 'text',
       fontSize: [2, 3],
+      lineHeight: 'heading',
       margin: headingsMargin,
     },
     h4: {
       color: 'text',
       fontSize: [1, 2],
+      lineHeight: 'heading',
       margin: headingsMargin,
     },
     h5: {
       color: 'text',
       fontSize: [0, 1],
+      lineHeight: 'heading',
       margin: headingsMargin,
     },
     h6: {
       color: 'text',
       fontSize: [0, 1],
+      lineHeight: 'heading',
       margin: headingsMargin,
     },
     a: {

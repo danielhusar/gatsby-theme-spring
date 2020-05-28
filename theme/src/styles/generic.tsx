@@ -66,7 +66,11 @@ export default css`
     + style + blockquote,
     + .pre,
     + style + .pre {
-      margin-top: 0 !important;
+      margin-top: 0.5em !important;
+
+      @media screen and (min-width: 40em) {
+        margin-top: 1em !important;
+      }
     }
   }
 
