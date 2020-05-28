@@ -20,7 +20,7 @@ export const PostSummary = styled.article`
     }
   }
 
-  &:first-child {
+  &:first-of-type {
     margin-top: 0;
   }
 
