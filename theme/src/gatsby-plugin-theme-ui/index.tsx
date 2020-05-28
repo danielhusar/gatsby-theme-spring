@@ -16,7 +16,7 @@ export default {
   margin,
   lineHeights: {
     text: '1.45',
-    heading: '1.3',
+    heading: '1.4',
   },
   sizes: {
     container: 800,

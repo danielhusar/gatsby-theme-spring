@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import styled from '../styled'
 import Overlay from '../overlay'
+import { defaultMargin } from '../../styles/utils'
 
 interface Props {
   width: number
@@ -16,11 +17,8 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div`
-  margin: ${(props) =>
-    css`
-      ${props.theme.margin} 0
-    `};
   text-align: center;
+  ${({ theme }) => defaultMargin({ theme })};
 
   .iframe-outer {
     display: inline-block;
