@@ -62,8 +62,8 @@ module.exports = (author) => ({
               author: author,
               title: edge.node.fields.title,
               description: `${image}${edge.node.excerpt}`.trim(),
-              url: `${site.siteMetadata.siteUrl}/${edge.node.fields.url}`,
-              guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.url}`,
+              url: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`,
+              guid: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`,
               pubDate: edge.node.fields.date,
               language: site.siteMetadata.language,
               custom_elements: [
