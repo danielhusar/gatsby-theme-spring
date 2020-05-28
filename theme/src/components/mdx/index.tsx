@@ -23,6 +23,7 @@ import tr from './tr'
 import ul from './ul'
 import Image from './image'
 import Gallery from './gallery'
+import Iframe from './iframe'
 
 export default {
   Image,
@@ -50,4 +51,5 @@ export default {
   th,
   tr,
   ul,
+  Iframe,
 }

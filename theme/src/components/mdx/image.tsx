@@ -7,9 +7,11 @@ interface Props {
   width: number | null
 }
 
-export default ({ width, children, caption }: Props) => (
+const Image = ({ width, children, caption }: Props) => (
   <Wrapper width={width}>
     {children}
     {caption ? <Caption>{caption}</Caption> : null}
   </Wrapper>
 )
+
+export default Image
