@@ -33,16 +33,16 @@ module.exports = {
     {
       resolve: '@daniel.husar/gatsby-theme-spring',
       options: {
-        paginationOffset: 5,
         author: 'Daniel Husar',
-        blogPath: '',
+        blogPath: '/blog',
+        paginationOffset: 5,
       },
     },
   ]
 }
 ```
 
-Plugin accepts 2 options:
+Plugin accepts 3 options:
 
 - `paginationOffset` (number) - number of articles per page
 - `author` (string) - author name for the rss feed
