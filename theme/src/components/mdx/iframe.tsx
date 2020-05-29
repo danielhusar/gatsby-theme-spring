@@ -55,12 +55,12 @@ const Wrapper = styled.div`
   }
 `
 
-const Iframe = ({ width, height, src, disableOverlay }: Props) => (
+const Iframe = ({ width, height, src, disableOverlay, ...rest }: Props) => (
   <Wrapper width={width} height={height}>
     <div className="iframe-outer">
       <div className="iframe-inner">
         <Overlay disableOverlay={disableOverlay}>
-          <iframe src={src} />
+          <iframe src={src} {...rest} />
         </Overlay>
       </div>
     </div>
