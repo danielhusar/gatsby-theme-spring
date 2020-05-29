@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: 'https://gatsby-theme-spring.netlify.com',
     feed_url: 'https://gatsby-theme-spring.netlify.com/rss.xml',
     image_url: 'https://gatsby-theme-spring.netlify.com/author.png',
+    twitterHandle: '@DanoHusar',
   },
   plugins: [
     {

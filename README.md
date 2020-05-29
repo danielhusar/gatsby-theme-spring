@@ -58,6 +58,7 @@ language: 'en',
 siteUrl: 'https://gatsby-theme-spring.netlify.com/',
 feed_url: 'https://gatsby-theme-spring.netlify.com/rss.xml',
 image_url: 'https://gatsby-theme-spring.netlify.com/avatar.png',
+twitterHandle: '@DanoHusar',
 ```
 
 ### Setting up
