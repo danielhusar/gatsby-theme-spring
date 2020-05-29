@@ -29,6 +29,7 @@ const query = graphql`
         keywords
         language
         siteUrl
+        twitterHandle
       }
     }
     portrait: file(relativePath: { eq: "img/author.png" }) {
@@ -56,7 +57,8 @@ const Main = styled.main`
 
 export default function Layout({ children, title: customTitle = '', description: customDescription, image, url, noIndex }: Props) {
   const { site, portrait } = useStaticQuery(query)
-  const { title, description, keywords, language, siteUrl } = site.siteMetadata
+
+  const { title, description, keywords, language, siteUrl, twitterHandle } = site.siteMetadata
   const metaImage = imageUrl(siteUrl, image || portrait?.childImageSharp.fixed.src)
   const currentUrl = `${siteUrl}${url && '/'}${url || ''}`
 
@@ -71,10 +73,12 @@ export default function Layout({ children, title: customTitle = '', description:
         <link rel="canonical" href={currentUrl} />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:title" content={customTitle || title} />
-        <meta property="twitter:title" content={customTitle || title} />
         <meta property="og:description" content={customDescription || description} />
-        <meta property="twitter:description" content={customDescription || description} />
         {metaImage ? <meta property="og:image" content={metaImage} /> : null}
+        <meta property="twitter:card" content="summary_large_image" />
+        {twitterHandle && <meta property="twitter:creator" content={twitterHandle} />}
+        <meta property="twitter:title" content={customTitle || title} />
+        <meta property="twitter:description" content={customDescription || description} />
         {metaImage ? <meta property="twitter:image" content={metaImage} /> : null}
         {noIndex ? <meta name="robots" content="noindex" /> : null}
       </Helmet>
