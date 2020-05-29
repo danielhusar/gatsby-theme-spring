@@ -54,7 +54,7 @@ module.exports = (author) => ({
           return allMdx.edges.map((edge) => {
             let banner
             try {
-              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.publicURL}`
+              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.childImageSharp.fluid.src}`
             } catch (e) {}
 
             const image = banner ? `<img src="${banner}" /> ` : ''
@@ -96,6 +96,11 @@ module.exports = (author) => ({
                   frontmatter {
                     banner {
                       publicURL
+                      childImageSharp {
+                        fluid(maxWidth: 760) {
+                          src
+                        }
+                      }
                     }
                   }
                 }
