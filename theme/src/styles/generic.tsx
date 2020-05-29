@@ -9,6 +9,7 @@ export default css`
 
   body {
     margin: 0;
+    -webkit-font-smoothing: antialiased;
   }
 
   img {
